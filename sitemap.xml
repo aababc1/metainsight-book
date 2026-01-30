@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://localhost:3001/sitemap_style.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:3002/sitemap_style.xsl" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3001</loc>
+    <loc>http://localhost:3002</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction</loc>
+    <loc>http://localhost:3002/introduction</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/sequencing</loc>
+    <loc>http://localhost:3002/sequencing</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/installation</loc>
+    <loc>http://localhost:3002/installation</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/preprocessing</loc>
+    <loc>http://localhost:3002/preprocessing</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/denovo-assembly</loc>
+    <loc>http://localhost:3002/denovo-assembly</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/binning</loc>
+    <loc>http://localhost:3002/binning</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/taxonomic</loc>
+    <loc>http://localhost:3002/taxonomic</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/phylogenetic</loc>
+    <loc>http://localhost:3002/phylogenetic</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/functional</loc>
+    <loc>http://localhost:3002/functional</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/read-based</loc>
+    <loc>http://localhost:3002/read-based</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction-1</loc>
+    <loc>http://localhost:3002/introduction-1</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/sequencing-1</loc>
+    <loc>http://localhost:3002/sequencing-1</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/installation-1</loc>
+    <loc>http://localhost:3002/installation-1</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/preprocessing-1</loc>
+    <loc>http://localhost:3002/preprocessing-1</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/alignment</loc>
+    <loc>http://localhost:3002/alignment</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/expression-profiling</loc>
+    <loc>http://localhost:3002/expression-profiling</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/taxonomy</loc>
+    <loc>http://localhost:3002/taxonomy</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/denovo-assembly-1</loc>
+    <loc>http://localhost:3002/denovo-assembly-1</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/read-based-1</loc>
+    <loc>http://localhost:3002/read-based-1</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/de-analysis</loc>
+    <loc>http://localhost:3002/de-analysis</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction-2</loc>
+    <loc>http://localhost:3002/introduction-2</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/sequencing-2</loc>
+    <loc>http://localhost:3002/sequencing-2</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/installation-2</loc>
+    <loc>http://localhost:3002/installation-2</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/preprocessing-2</loc>
+    <loc>http://localhost:3002/preprocessing-2</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/alignment-1</loc>
+    <loc>http://localhost:3002/alignment-1</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/ribosome-profiling</loc>
+    <loc>http://localhost:3002/ribosome-profiling</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/translational-quantification</loc>
+    <loc>http://localhost:3002/translational-quantification</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/read-based-2</loc>
+    <loc>http://localhost:3002/read-based-2</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/small-protein-prediction</loc>
+    <loc>http://localhost:3002/small-protein-prediction</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/de-analysis-1</loc>
+    <loc>http://localhost:3002/de-analysis-1</loc>
   </url>
 </urlset>
