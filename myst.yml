@@ -1,0 +1,58 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: c2a2c0b2-1da1-45ec-9e5a-48ed4e825549
+  title: META-Insight
+  description: Meta-omics Analysis Protocols for Microbiome Research
+  keywords:
+    - metagenomics
+    - metatranscriptomics
+    - metaproteomics
+    - microbiome
+    - bioinformatics
+  authors:
+    - name: META-Insight Team
+  github: https://github.com/your-username/metainsight-book
+  toc:
+    - file: index.md
+    - title: Metagenomics
+      children:
+        - file: metagenomics/Introduction.md
+        - file: metagenomics/Sequencing.md
+        - file: metagenomics/Installation.md
+        - file: metagenomics/Preprocessing.md
+        - file: metagenomics/Denovo_assembly.md
+        - file: metagenomics/Binning.md
+        - file: metagenomics/Taxonomic.md
+        - file: metagenomics/phylogenetic.md
+        - file: metagenomics/Functional.md
+        - file: metagenomics/Read-based.md
+    - title: Metatranscriptomics
+      children:
+        - file: metatranscriptomics/Introduction.md
+        - file: metatranscriptomics/Sequencing.md
+        - file: metatranscriptomics/Installation.md
+        - file: metatranscriptomics/Preprocessing.md
+        - file: metatranscriptomics/Alignment.md
+        - file: metatranscriptomics/Expression_profiling.md
+        - file: metatranscriptomics/Taxonomy.md
+        - file: metatranscriptomics/Denovo_assembly.md
+        - file: metatranscriptomics/Read_based.md
+        - file: metatranscriptomics/DE_analysis.md
+    - title: Metaproteomics
+      children:
+        - file: metaproteomics/Introduction.md
+        - file: metaproteomics/Sequencing.md
+        - file: metaproteomics/Installation.md
+        - file: metaproteomics/Preprocessing.md
+        - file: metaproteomics/Alignment.md
+        - file: metaproteomics/Ribosome_profiling.md
+        - file: metaproteomics/Translational_quantification.md
+        - file: metaproteomics/Read_based.md
+        - file: metaproteomics/Small_protein_prediction.md
+        - file: metaproteomics/DE_analysis.md
+site:
+  template: book-theme
+  options:
+    favicon: images/META-Insight_logo.svg
+    logo: images/META-Insight_logo.svg
