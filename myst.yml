@@ -53,6 +53,7 @@ project:
         - file: metaproteomics/DE_analysis.md
 site:
   template: book-theme
+  base_url: /metainsight-book
   options:
     favicon: images/META-Insight_logo.svg
     logo: images/META-Insight_logo.svg
