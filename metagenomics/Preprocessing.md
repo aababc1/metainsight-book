@@ -1,8 +1,10 @@
 # Preprocessing of the sequencing reads
 
+Raw sequencing data inevitably contains artifacts that must be removed before downstream analysis. These artifacts include low-quality bases introduced during the sequencing process, adapter sequences ligated during library preparation, and reads originating from the host genome rather than the microbial community of interest. Preprocessing—also referred to as quality control (QC) and read filtering—is a critical first step that directly affects the accuracy of assembly, taxonomic profiling, and functional annotation. In this chapter, we describe preprocessing workflows for both short-read (Illumina) and long-read (PacBio HiFi) metagenomic data, using KneadData and minimap2, respectively.
+
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaGenomic/img/G_5_1.png?raw=true" style="width:90%">
-  <figcaption><b></b></figcaption>  
+  <figcaption><b></b></figcaption>
 </figure>
 
 ## Short reads

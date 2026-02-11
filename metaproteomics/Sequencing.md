@@ -1,4 +1,7 @@
 # Sequencing
+
+Ribosome profiling (Ribo-seq) requires a specialized sample preparation protocol that differs significantly from standard RNA-seq. Rather than capturing total mRNA, this technique isolates ribosome-protected mRNA fragments (ribosome footprints), which represent mRNAs that are actively being translated into proteins at the moment of sample collection. The key steps involve cell lysis under conditions that arrest ribosomes on mRNA (using chloramphenicol), nuclease digestion to degrade unprotected RNA, size-selection of ribosome-bound fragments via gel filtration chromatography, and subsequent library preparation for Illumina sequencing. This chapter provides the complete wet-lab protocol from fecal sample processing through sequencing, with particular attention to the preparation of stock solutions containing translation-arrest reagents and the micrococcal nuclease (MNase) digestion conditions that determine footprint quality.
+
 ## Biological Samples
 - Process 500 µL of RNAlater (Ambion) for every 1 g of fecal sample and store it at -80°C
 

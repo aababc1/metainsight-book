@@ -1,5 +1,7 @@
 # Sequencing
 
+Metatranscriptomic sequencing captures the actively expressed genes within a microbial community at a given point in time, providing a snapshot of community-level gene expression. Unlike DNA-based metagenomics, RNA is inherently unstable and degrades rapidly, making proper sample preservation, RNA extraction, and library preparation critically important. This chapter details the complete wet-lab protocol for metatranscriptomic sequencing, from fecal sample collection and RNA extraction through rRNA depletion and Illumina library preparation. Special attention is given to maintaining RNA integrity throughout the workflow, as the quality of the extracted RNA directly determines the reliability of downstream expression analyses.
+
 ## Biological samples
 - Process 500 µL of RNAlater (Ambion) for every 1 g of fecal sample and store it at -80°C
 

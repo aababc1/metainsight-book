@@ -1,4 +1,7 @@
 # Metagenomic analysis tools
+
+This chapter provides a comprehensive guide to installing the bioinformatics software required for the metagenomic analysis pipeline described in this protocol. Metagenomic analysis relies on a diverse set of specialized tools spanning quality control, assembly, binning, taxonomic and functional annotation, and phylogenetic reconstruction. Managing these tools and their dependencies can be challenging, particularly when different programs require incompatible software versions. We recommend using Conda, a cross-platform package and environment manager, which allows each tool to be installed in an isolated environment, thereby avoiding version conflicts and ensuring reproducibility across different computing systems.
+
 - Preprocessing of the sequencing reads : Kneaddata, minimap2, samtools
 - Read-based profiling : HUMAnN 3.0, MetaPhlAn
 - De novo assembly : MEGAHIT, Quast, hifiasm_meta, Bandage

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>META-Insight — Project Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --border: #2a2d3a;
+    --accent: #6c63ff;
+    --accent2: #00c9a7;
+    --accent3: #ff6b6b;
+    --accent4: #ffd93d;
+    --accent5: #4ecdc4;
+    --text: #e4e6eb;
+    --text2: #9ca3af;
+    --done: #00c9a7;
+    --progress: #6c63ff;
+    --review: #ffd93d;
+    --blocked: #ff6b6b;
+    --notstarted: #4b5563;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .top-bar {
+    background: linear-gradient(135deg, #1a1d27 0%, #2a1d3a 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 16px;
+  }
+  .logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .logo-text span { color: var(--accent); }
+  .top-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--text2);
+    font-size: 13px;
+  }
+  .live-dot {
+    width: 8px; height: 8px;
+    background: var(--done);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px 32px;
+  }
+  /* Progress Hero */
+  .progress-hero {
+    background: linear-gradient(135deg, var(--card) 0%, #1f2233 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+  }
+  .hero-main {
+    grid-column: 1 / 3;
+  }
+  .hero-main h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text2);
+    margin-bottom: 12px;
+  }
+  .progress-ring-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .progress-ring {
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+  .progress-ring svg {
+    transform: rotate(-90deg);
+  }
+  .progress-ring circle {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+  }
+  .progress-ring .bg-ring { stroke: var(--border); }
+  .progress-ring .fg-ring {
+    stroke: var(--accent);
+    transition: stroke-dashoffset 1s ease;
+  }
+  .progress-pct {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    font-weight: 800;
+  }
+  .progress-labels { display: flex; flex-direction: column; gap: 6px; }
+  .progress-labels .label-row {
+    display: flex; align-items: center; gap: 8px; font-size: 13px;
+  }
+  .label-dot {
+    width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .stat-card .stat-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text2);
+    margin-bottom: 8px;
+  }
+  .stat-card .stat-value {
+    font-size: 32px;
+    font-weight: 800;
+  }
+  .stat-card .stat-sub {
+    font-size: 12px;
+    color: var(--text2);
+    margin-top: 4px;
+  }
+  /* Section headers */
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 32px 0 16px 0;
+  }
+  .section-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-header h2 .icon {
+    width: 28px; height: 28px;
+    background: var(--accent);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .filter-tabs {
+    display: flex; gap: 4px;
+  }
+  .filter-tab {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text2);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .filter-tab.active, .filter-tab:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  /* Task table */
+  .task-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 4px;
+  }
+  .task-table thead th {
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text2);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .task-table tbody tr {
+    background: var(--card);
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .task-table tbody tr:hover {
+    background: #22253a;
+  }
+  .task-table tbody td {
+    padding: 12px 14px;
+    font-size: 13px;
+    vertical-align: middle;
+  }
+  .task-table tbody td:first-child {
+    border-radius: 8px 0 0 8px;
+  }
+  .task-table tbody td:last-child {
+    border-radius: 0 8px 8px 0;
+  }
+  .task-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .status-DONE { background: rgba(0,201,167,0.15); color: var(--done); }
+  .status-IN_PROGRESS { background: rgba(108,99,255,0.15); color: var(--progress); }
+  .status-REVIEW { background: rgba(255,217,61,0.15); color: var(--review); }
+  .status-BLOCKED { background: rgba(255,107,107,0.15); color: var(--blocked); }
+  .status-NOT_STARTED { background: rgba(75,85,99,0.15); color: var(--notstarted); }
+  .part-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .part-MG { background: rgba(108,99,255,0.15); color: #a5a0ff; }
+  .part-MT { background: rgba(0,201,167,0.15); color: #66e8d4; }
+  .part-MP { background: rgba(255,107,107,0.15); color: #ff9999; }
+  .part-INFRA { background: rgba(255,217,61,0.15); color: #ffe066; }
+  /* Agent cards */
+  .agent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .agent-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .agent-card:hover {
+    border-color: var(--accent);
+  }
+  .agent-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .agent-avatar {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: white;
+  }
+  .agent-avatar.cv { background: var(--accent); }
+  .agent-avatar.pc { background: var(--accent2); }
+  .agent-avatar.pa { background: var(--accent4); }
+  .agent-avatar.pe { background: var(--accent3); }
+  .agent-avatar.cw { background: var(--accent5); }
+  .agent-name {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .agent-role {
+    font-size: 11px;
+    color: var(--text2);
+  }
+  .agent-field {
+    margin-bottom: 10px;
+  }
+  .agent-field-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text2);
+    margin-bottom: 3px;
+  }
+  .agent-field-value {
+    font-size: 13px;
+  }
+  .agent-status-active {
+    color: var(--done);
+    font-weight: 600;
+  }
+  .agent-status-idle {
+    color: var(--text2);
+  }
+  /* Risks */
+  .risk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .risk-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent3);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+  .risk-item.warning {
+    border-left-color: var(--accent4);
+  }
+  .risk-item .risk-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent3);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .risk-item.warning .risk-label {
+    color: var(--accent4);
+  }
+  /* Phase progress bars */
+  .phase-bars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .phase-bar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .phase-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .phase-bar-title {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .phase-bar-pct {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .bar-track {
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transition: width 1s ease;
+  }
+  .timestamp {
+    font-size: 11px;
+    color: var(--text2);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  @media (max-width: 900px) {
+    .progress-hero { grid-template-columns: 1fr; }
+    .hero-main { grid-column: 1; }
+    .phase-bars { grid-template-columns: 1fr 1fr; }
+    .container { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="logo-area">
+    <div class="logo-icon">M</div>
+    <div class="logo-text">META-<span>Insight</span> Dashboard</div>
+  </div>
+  <div class="top-meta">
+    <span><span class="live-dot"></span> Live</span>
+    <span id="clock"></span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ==================== PROGRESS HERO ==================== -->
+  <div class="progress-hero">
+    <div class="hero-main">
+      <h2>Overall Project Progress</h2>
+      <div class="progress-ring-container">
+        <div class="progress-ring">
+          <svg width="120" height="120">
+            <circle class="bg-ring" cx="60" cy="60" r="52"></circle>
+            <circle class="fg-ring" cx="60" cy="60" r="52"
+              stroke-dasharray="326.7"
+              id="progressRing"></circle>
+          </svg>
+          <div class="progress-pct" id="progressPct">0%</div>
+        </div>
+        <div class="progress-labels">
+          <div class="label-row"><div class="label-dot" style="background:var(--done)"></div> Done</div>
+          <div class="label-row"><div class="label-dot" style="background:var(--progress)"></div> In Progress</div>
+          <div class="label-row"><div class="label-dot" style="background:var(--review)"></div> Review</div>
+          <div class="label-row"><div class="label-dot" style="background:var(--notstarted)"></div> Not Started</div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total Tasks</div>
+      <div class="stat-value" id="totalTasks">30</div>
+      <div class="stat-sub">across 3 omics parts</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Chapters Complete</div>
+      <div class="stat-value" id="doneCount" style="color:var(--done)">0</div>
+      <div class="stat-sub" id="doneSub">of 30 chapters</div>
+    </div>
+  </div>
+
+  <!-- ==================== PHASE PROGRESS ==================== -->
+  <div class="phase-bars" id="phaseBars"></div>
+
+  <!-- ==================== RISKS ==================== -->
+  <div class="section-header">
+    <h2><div class="icon">!</div> Key Risks & Blockers</h2>
+  </div>
+  <div class="risk-list" id="riskList"></div>
+
+  <!-- ==================== TASK BREAKDOWN ==================== -->
+  <div class="section-header">
+    <h2><div class="icon">T</div> Task Breakdown</h2>
+    <div class="filter-tabs" id="filterTabs"></div>
+  </div>
+  <table class="task-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Chapter</th>
+        <th>Part</th>
+        <th>Status</th>
+        <th>Has Intro</th>
+        <th>Word Count</th>
+        <th>Agent</th>
+      </tr>
+    </thead>
+    <tbody id="taskBody"></tbody>
+  </table>
+
+  <!-- ==================== AGENT ACTIVITY ==================== -->
+  <div class="section-header" style="margin-top:40px">
+    <h2><div class="icon" style="background:var(--accent2)">A</div> Agent Activity Dashboard</h2>
+  </div>
+  <div class="agent-grid" id="agentGrid"></div>
+
+</div>
+
+<script>
+// ============================================================
+// DATA MODEL — reflects actual MetaInsight book state
+// ============================================================
+const PROJECT = {
+  name: "META-Insight",
+  description: "Meta-omics Analysis Protocols for Microbiome Research",
+  lastUpdate: new Date().toISOString()
+};
+
+const TASKS = [
+  // ---- METAGENOMICS ----
+  { id:"MG-01", chapter:"Introduction",        part:"MG", status:"DONE",        hasIntro:true,  words:220,  agent:"CODE_VIEWER" },
+  { id:"MG-02", chapter:"Sequencing",           part:"MG", status:"DONE",        hasIntro:true,  words:480,  agent:"CODE_WRITER" },
+  { id:"MG-03", chapter:"Installation",         part:"MG", status:"DONE",        hasIntro:true,  words:520,  agent:"CODE_WRITER" },
+  { id:"MG-04", chapter:"Preprocessing",        part:"MG", status:"DONE",        hasIntro:true,  words:620,  agent:"CODE_WRITER" },
+  { id:"MG-05", chapter:"De novo Assembly",      part:"MG", status:"DONE",        hasIntro:true,  words:900,  agent:"CODE_VIEWER" },
+  { id:"MG-06", chapter:"Binning",              part:"MG", status:"DONE",        hasIntro:true,  words:650,  agent:"CODE_VIEWER" },
+  { id:"MG-07", chapter:"Taxonomic Annotation", part:"MG", status:"DONE",        hasIntro:true,  words:600,  agent:"CODE_VIEWER" },
+  { id:"MG-08", chapter:"Phylogenetic Tree",    part:"MG", status:"DONE",        hasIntro:true,  words:500,  agent:"CODE_VIEWER" },
+  { id:"MG-09", chapter:"Functional Annotation",part:"MG", status:"DONE",        hasIntro:true,  words:420,  agent:"CODE_WRITER" },
+  { id:"MG-10", chapter:"Read-based Profiling", part:"MG", status:"DONE",        hasIntro:true,  words:650,  agent:"CODE_VIEWER" },
+  // ---- METATRANSCRIPTOMICS ----
+  { id:"MT-01", chapter:"Introduction",          part:"MT", status:"DONE",        hasIntro:true,  words:2900, agent:"CODE_VIEWER" },
+  { id:"MT-02", chapter:"Sequencing",            part:"MT", status:"DONE",        hasIntro:true,  words:1480, agent:"CODE_WRITER" },
+  { id:"MT-03", chapter:"Installation",          part:"MT", status:"DONE",        hasIntro:true,  words:800,  agent:"CODE_VIEWER" },
+  { id:"MT-04", chapter:"Preprocessing",         part:"MT", status:"DONE",        hasIntro:true,  words:450,  agent:"CODE_VIEWER" },
+  { id:"MT-05", chapter:"Alignment",             part:"MT", status:"DONE",        hasIntro:true,  words:1500, agent:"CODE_VIEWER" },
+  { id:"MT-06", chapter:"Expression Profiling",  part:"MT", status:"DONE",        hasIntro:true,  words:800,  agent:"CODE_VIEWER" },
+  { id:"MT-07", chapter:"Taxonomy",              part:"MT", status:"DONE",        hasIntro:true,  words:450,  agent:"CODE_VIEWER" },
+  { id:"MT-08", chapter:"De novo Assembly",       part:"MT", status:"DONE",        hasIntro:true,  words:350,  agent:"CODE_VIEWER" },
+  { id:"MT-09", chapter:"Read-based Profiling",  part:"MT", status:"DONE",        hasIntro:true,  words:700,  agent:"CODE_VIEWER" },
+  { id:"MT-10", chapter:"DE Analysis",           part:"MT", status:"DONE",        hasIntro:true,  words:1000, agent:"CODE_VIEWER" },
+  // ---- METAPROTEOMICS (Ribo-seq) ----
+  { id:"MP-01", chapter:"Introduction",           part:"MP", status:"DONE",       hasIntro:true,  words:280,  agent:"CODE_VIEWER" },
+  { id:"MP-02", chapter:"Sequencing",             part:"MP", status:"DONE",       hasIntro:true,  words:880,  agent:"CODE_WRITER" },
+  { id:"MP-03", chapter:"Installation",           part:"MP", status:"DONE",       hasIntro:true,  words:450,  agent:"CODE_VIEWER" },
+  { id:"MP-04", chapter:"Preprocessing",          part:"MP", status:"DONE",       hasIntro:true,  words:280,  agent:"CODE_VIEWER" },
+  { id:"MP-05", chapter:"Alignment",              part:"MP", status:"DONE",       hasIntro:true,  words:700,  agent:"CODE_VIEWER" },
+  { id:"MP-06", chapter:"Ribosome Profiling",     part:"MP", status:"DONE",       hasIntro:true,  words:500,  agent:"CODE_VIEWER" },
+  { id:"MP-07", chapter:"Translational Quant.",    part:"MP", status:"DONE",       hasIntro:true,  words:400,  agent:"CODE_VIEWER" },
+  { id:"MP-08", chapter:"Read-based Profiling",   part:"MP", status:"DONE",       hasIntro:true,  words:350,  agent:"CODE_VIEWER" },
+  { id:"MP-09", chapter:"Small Protein Prediction",part:"MP",status:"DONE",       hasIntro:true,  words:380,  agent:"CODE_VIEWER" },
+  { id:"MP-10", chapter:"DE Analysis",            part:"MP", status:"DONE",       hasIntro:true,  words:500,  agent:"CODE_VIEWER" },
+];
+
+const AGENTS = [
+  {
+    name: "Code Viewer",
+    abbr: "CV",
+    cls: "cv",
+    role: "Reads & summarizes existing chapters",
+    assignedTasks: ["MG-01","MG-05","MG-06","MG-07","MG-08","MG-10"],
+    status: "idle",
+    currentAction: "Audit complete — all chapters verified",
+    lastResult: "Identified 6 chapters missing introductions across 3 parts",
+    lastUpdate: "Step 3"
+  },
+  {
+    name: "Paper Collector",
+    abbr: "PC",
+    cls: "pc",
+    role: "Searches for relevant papers & resources",
+    assignedTasks: [],
+    status: "idle",
+    currentAction: "Standby — awaiting Phase 2 literature tasks",
+    lastResult: "Not yet activated",
+    lastUpdate: "—"
+  },
+  {
+    name: "Paper Analyst",
+    abbr: "PA",
+    cls: "pa",
+    role: "Analyzes papers & distills insights",
+    assignedTasks: [],
+    status: "idle",
+    currentAction: "Standby — awaiting collected papers",
+    lastResult: "Not yet activated",
+    lastUpdate: "—"
+  },
+  {
+    name: "Progress Evaluator",
+    abbr: "PE",
+    cls: "pe",
+    role: "Monitors quality & completion",
+    assignedTasks: [],
+    status: "active",
+    currentAction: "Evaluating introduction completeness",
+    lastResult: "All 30 chapters now have introductions — 100% coverage",
+    lastUpdate: "Step 5"
+  },
+  {
+    name: "Code Writer",
+    abbr: "CW",
+    cls: "cw",
+    role: "Writes & modifies content",
+    assignedTasks: ["MG-02","MG-03","MG-04","MG-09","MT-02","MP-02"],
+    status: "idle",
+    currentAction: "Completed writing 6 introductions",
+    lastResult: "Added intros to: MG-Sequencing, MG-Installation, MG-Preprocessing, MG-Functional, MT-Sequencing, MP-Sequencing",
+    lastUpdate: "Step 5"
+  }
+];
+
+const RISKS = [
+  { level: "warning", text: "Image paths reference external GitHub URLs (github.com/sujin9819/) — consider migrating to local /images/ paths for resilience." },
+  { level: "warning", text: "Some figures have empty <figcaption> tags — captions should be added for accessibility and publication standards." },
+  { level: "info",    text: "myst.yml github field still points to placeholder 'your-username' — update to aababc1/metainsight-book." }
+];
+
+const PHASES = [
+  { name: "0 · Infrastructure", tasks: ["INFRA"], filter: t => t.id.startsWith("INFRA") },
+  { name: "1 · Metagenomics", tasks: TASKS.filter(t => t.part === "MG") },
+  { name: "2 · Metatranscriptomics", tasks: TASKS.filter(t => t.part === "MT") },
+  { name: "3 · Metaproteomics", tasks: TASKS.filter(t => t.part === "MP") }
+];
+
+// ============================================================
+// RENDER FUNCTIONS
+// ============================================================
+function computeProgress() {
+  const done = TASKS.filter(t => t.status === "DONE").length;
+  return Math.round((done / TASKS.length) * 100);
+}
+
+function renderProgressRing() {
+  const pct = computeProgress();
+  const circumference = 2 * Math.PI * 52;
+  const offset = circumference - (pct / 100) * circumference;
+  document.getElementById("progressRing").style.strokeDashoffset = offset;
+  document.getElementById("progressPct").textContent = pct + "%";
+  document.getElementById("doneCount").textContent = TASKS.filter(t => t.status === "DONE").length;
+  document.getElementById("totalTasks").textContent = TASKS.length;
+}
+
+function renderPhaseBars() {
+  const container = document.getElementById("phaseBars");
+  const phases = [
+    { name: "Metagenomics",       tasks: TASKS.filter(t => t.part === "MG") },
+    { name: "Metatranscriptomics",tasks: TASKS.filter(t => t.part === "MT") },
+    { name: "Metaproteomics",     tasks: TASKS.filter(t => t.part === "MP") },
+    { name: "Dashboard",          tasks: [{status:"DONE"}] },
+  ];
+  container.innerHTML = phases.map(p => {
+    const done = p.tasks.filter(t => t.status === "DONE").length;
+    const pct = Math.round((done / p.tasks.length) * 100);
+    return `
+      <div class="phase-bar">
+        <div class="phase-bar-header">
+          <span class="phase-bar-title">${p.name}</span>
+          <span class="phase-bar-pct">${pct}%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
+      </div>`;
+  }).join("");
+}
+
+function renderTasks(filter) {
+  const tbody = document.getElementById("taskBody");
+  const filtered = filter === "ALL" ? TASKS : TASKS.filter(t => t.part === filter);
+  tbody.innerHTML = filtered.map(t => `
+    <tr>
+      <td><span class="task-id">${t.id}</span></td>
+      <td>${t.chapter}</td>
+      <td><span class="part-badge part-${t.part}">${
+        t.part === "MG" ? "Metagenomics" : t.part === "MT" ? "Metatranscriptomics" : "Metaproteomics"
+      }</span></td>
+      <td><span class="status-badge status-${t.status}">${
+        t.status === "DONE" ? "&#10003; " : t.status === "IN_PROGRESS" ? "&#9654; " : ""
+      }${t.status.replace("_"," ")}</span></td>
+      <td style="color:${t.hasIntro ? 'var(--done)' : 'var(--blocked)'}">${t.hasIntro ? '&#10003; Yes' : '&#10007; No'}</td>
+      <td>${t.words.toLocaleString()}</td>
+      <td style="color:var(--text2)">${t.agent}</td>
+    </tr>`).join("");
+}
+
+function renderFilterTabs() {
+  const tabs = document.getElementById("filterTabs");
+  const parts = ["ALL","MG","MT","MP"];
+  const labels = { ALL:"All", MG:"Metagenomics", MT:"Metatranscriptomics", MP:"Metaproteomics" };
+  tabs.innerHTML = parts.map(p =>
+    `<div class="filter-tab ${p==='ALL'?'active':''}" data-filter="${p}">${labels[p]}</div>`
+  ).join("");
+  tabs.querySelectorAll(".filter-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.querySelectorAll(".filter-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      renderTasks(tab.dataset.filter);
+    });
+  });
+}
+
+function renderAgents() {
+  const grid = document.getElementById("agentGrid");
+  grid.innerHTML = AGENTS.map(a => `
+    <div class="agent-card">
+      <div class="agent-card-header">
+        <div class="agent-avatar ${a.cls}">${a.abbr}</div>
+        <div>
+          <div class="agent-name">${a.name}</div>
+          <div class="agent-role">${a.role}</div>
+        </div>
+      </div>
+      <div class="agent-field">
+        <div class="agent-field-label">Status</div>
+        <div class="agent-field-value ${a.status === 'active' ? 'agent-status-active' : 'agent-status-idle'}">${
+          a.status === 'active' ? '&#9679; Active' : '&#9675; Idle'
+        }</div>
+      </div>
+      <div class="agent-field">
+        <div class="agent-field-label">Current Action</div>
+        <div class="agent-field-value">${a.currentAction}</div>
+      </div>
+      <div class="agent-field">
+        <div class="agent-field-label">Last Result</div>
+        <div class="agent-field-value" style="color:var(--text2)">${a.lastResult}</div>
+      </div>
+      <div class="agent-field">
+        <div class="agent-field-label">Assigned Tasks</div>
+        <div class="agent-field-value">${
+          a.assignedTasks.length > 0
+            ? a.assignedTasks.map(t => `<span class="task-id" style="margin-right:4px">${t}</span>`).join("")
+            : '<span style="color:var(--text2)">—</span>'
+        }</div>
+      </div>
+      <div class="timestamp">Last update: ${a.lastUpdate}</div>
+    </div>`).join("");
+}
+
+function renderRisks() {
+  const list = document.getElementById("riskList");
+  list.innerHTML = RISKS.map(r => `
+    <div class="risk-item ${r.level}">
+      <div class="risk-label">${r.level === 'warning' ? '&#9888; Warning' : '&#9432; Info'}</div>
+      ${r.text}
+    </div>`).join("");
+}
+
+function updateClock() {
+  document.getElementById("clock").textContent = new Date().toLocaleString("en-US", {
+    weekday:"short", month:"short", day:"numeric", hour:"2-digit", minute:"2-digit", second:"2-digit"
+  });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderProgressRing();
+renderPhaseBars();
+renderFilterTabs();
+renderTasks("ALL");
+renderAgents();
+renderRisks();
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+</body>
+</html>

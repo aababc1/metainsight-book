@@ -1,5 +1,8 @@
 
 # Preparation for sequencing
+
+The quality of metagenomic analysis is fundamentally determined by the quality of the input DNA. This chapter describes the sample collection, storage, and DNA extraction protocols optimized for both Illumina short-read and PacBio long-read whole metagenome shotgun (WMS) sequencing. Proper sample handling and DNA preparation are essential to ensure high sequencing yield, minimize host contamination, and preserve the microbial community composition representative of the original environment. Short-read sequencing requires high-purity DNA with minimal fragmentation, while long-read sequencing demands high-molecular-weight DNA with minimal shearing, necessitating different extraction approaches.
+
 ## Biological samples
 Collect the fecal sample using the sampling spoon and spatula of the fecal collection kit (NBG-4, Noble Biosciences), shake well to homogenize the sample, and store at -80℃.
 

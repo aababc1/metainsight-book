@@ -1,7 +1,10 @@
 # Functional annotation of contigs
+
+While taxonomic profiling reveals *who* is present in a microbial community, functional annotation addresses the equally important question of *what* they can do. Functional annotation assigns biological roles to the predicted genes within assembled contigs or metagenome-assembled genomes (MAGs), linking open reading frames (ORFs) to known metabolic pathways, enzyme functions, and gene ontologies. This step is essential for understanding the metabolic potential of microbial communities and for identifying genes of interest such as antibiotic resistance genes, carbohydrate-active enzymes, or novel biosynthetic gene clusters. In this chapter, we describe gene prediction using Prodigal and functional annotation using eggNOG-mapper against multiple reference databases.
+
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaGenomic/img/G_9_1.png?raw=true" style="width:90%">
-  <figcaption><b></b></figcaption>  
+  <figcaption><b></b></figcaption>
 </figure>
 
 After completing the taxonomic annotation of contigs, it is necessary to retrieve information about the open reading frame of the contigs to make a functional assignment.
