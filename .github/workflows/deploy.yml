@@ -29,15 +29,38 @@ jobs:
         run: npm install -g mystmd
 
       - name: Build book
-        run: myst build --html
+        run: myst build
 
       - name: Copy dashboard into build output
-        run: cp dashboard.html _build/html/dashboard.html
+        run: |
+          if [ -d "_build/html" ]; then
+            cp dashboard.html _build/html/dashboard.html
+            echo "Copied to _build/html/"
+          elif [ -d "_build/site" ]; then
+            cp dashboard.html _build/site/dashboard.html
+            echo "Copied to _build/site/"
+          fi
+
+      - name: Determine build output path
+        id: buildpath
+        run: |
+          if [ -f "_build/html/index.html" ]; then
+            echo "path=_build/html" >> $GITHUB_OUTPUT
+          elif [ -f "_build/site/public/index.html" ]; then
+            echo "path=_build/site/public" >> $GITHUB_OUTPUT
+          elif [ -d "_build/site" ]; then
+            echo "path=_build/site" >> $GITHUB_OUTPUT
+          else
+            echo "path=_build/html" >> $GITHUB_OUTPUT
+          fi
+
+      - name: List build output
+        run: ls -la ${{ steps.buildpath.outputs.path }}/ | head -30
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _build/html
+          path: ${{ steps.buildpath.outputs.path }}
 
   deploy:
     environment:
