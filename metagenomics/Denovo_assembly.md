@@ -31,6 +31,8 @@ $ conda deactivate
 
 ## Long reads assembly
 
+PacBio HiFi long reads (typically 10–20 kb with >99% accuracy) enable the resolution of repetitive genomic regions and the recovery of near-complete metagenome-assembled genomes that are inaccessible through short-read assembly alone. The assembler [hifiasm-meta](https://github.com/lh3/hifiasm-meta) is specifically designed for metagenomic HiFi data, producing high-quality primary and alternate contigs by leveraging the length and accuracy of HiFi reads to resolve strain-level haplotypes within complex microbial communities. Unlike short-read assemblers based on de Bruijn graphs, hifiasm-meta uses an overlap-based approach that better preserves long-range genomic structure.
+
 ```bash
 # run hifiasm_meta 
 $ conda activate hifiam_meta

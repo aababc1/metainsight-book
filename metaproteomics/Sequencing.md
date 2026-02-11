@@ -3,9 +3,15 @@
 Ribosome profiling (Ribo-seq) requires a specialized sample preparation protocol that differs significantly from standard RNA-seq. Rather than capturing total mRNA, this technique isolates ribosome-protected mRNA fragments (ribosome footprints), which represent mRNAs that are actively being translated into proteins at the moment of sample collection. The key steps involve cell lysis under conditions that arrest ribosomes on mRNA (using chloramphenicol), nuclease digestion to degrade unprotected RNA, size-selection of ribosome-bound fragments via gel filtration chromatography, and subsequent library preparation for Illumina sequencing. This chapter provides the complete wet-lab protocol from fecal sample processing through sequencing, with particular attention to the preparation of stock solutions containing translation-arrest reagents and the micrococcal nuclease (MNase) digestion conditions that determine footprint quality.
 
 ## Biological Samples
+
+As with metatranscriptomic protocols, immediate RNA stabilization is critical for Ribo-seq. RNAlater preserves the ribosome–mRNA complexes in their native translational state, preventing post-collection changes in ribosome occupancy that would distort the resulting translational profile. Samples must be processed promptly and stored at -80°C to maintain the integrity of ribosome-protected fragments.
+
 - Process 500 µL of RNAlater (Ambion) for every 1 g of fecal sample and store it at -80°C
 
 ## Ribosome-bound mRNA prep
+
+The core of Ribo-seq lies in isolating ribosome-protected mRNA fragments (footprints) of approximately 28–35 nucleotides. This is achieved through a multi-step process: (1) cell lysis in the presence of chloramphenicol to arrest ribosomes at their translational positions, (2) micrococcal nuclease (MNase) digestion to degrade all RNA not physically shielded by a ribosome, and (3) size-selection of monosome-associated fragments via Sephacryl S400 gel filtration columns. The resulting footprints directly correspond to the positions and density of actively translating ribosomes, providing a quantitative readout of protein synthesis that complements but is distinct from total mRNA abundance measured by RNA-seq.
+
 ### Reagents
 - RLT buffer (Qiagen), β-mercaptoethanol, Superase-In 20U/μL, 100% ethanol, 3M sodium acetate, chloramphenicol 50mg/ml, 1M Tris-HCl (pH8.0), 1M NH4Cl, 1M MgOAc, RNase-free water, Ipecal CA-630, 1M MgCl2, 0.5M EGTA, 5M NaCl, MNase (NEB), 0.5M CaCl2, Qiazol (Qiagen), chloroform
 - kit 
@@ -100,10 +106,16 @@ A Fragment Analyzer can be used to assess the proportion of rRNA in RNA samples,
 - Centrifuge at 10,000 rpm for 1 minute and 30 seconds, and transfer the supernatant to a new e-tube.
 
 ### rRNA depletion
+
+Even after MNase digestion and monosome purification, ribosomal RNA fragments still constitute a substantial fraction of the remaining RNA pool. Enzymatic rRNA depletion using probe-based kits is therefore essential to enrich for true ribosome footprints and maximize the proportion of informative sequencing reads. Two kits are applied sequentially to target both host-derived and bacterial rRNA species.
+
 - Host rRNA remove Illumina TruSeq Stranded Total RNA Library Prep Plant Kit (Illumina, # 20020611)
 - Bacterial rRNA remove Illumina Stranded Total RNA Library Prep with Ribo-Zero Plus kit (Illumina, #20040529)
 
 ## Sequencing
+
+The purified ribosome-protected fragments are converted into a sequencing-ready cDNA library. Because Ribo-seq footprints are characteristically short (28–35 nt), the library preparation preserves these small fragments through careful adapter ligation and limited-cycle PCR amplification, ensuring that the final library accurately represents the size distribution of ribosome footprints.
+
 ### Sequencing library preparation  
 - Perform mRNA fragmentation using divalent cations.
 - First strand cDNA synthesis using SuperScript II reverse transcriptase (Invitrogen, #18064014) with random primers. 

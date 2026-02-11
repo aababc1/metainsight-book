@@ -3,9 +3,15 @@
 Metatranscriptomic sequencing captures the actively expressed genes within a microbial community at a given point in time, providing a snapshot of community-level gene expression. Unlike DNA-based metagenomics, RNA is inherently unstable and degrades rapidly, making proper sample preservation, RNA extraction, and library preparation critically important. This chapter details the complete wet-lab protocol for metatranscriptomic sequencing, from fecal sample collection and RNA extraction through rRNA depletion and Illumina library preparation. Special attention is given to maintaining RNA integrity throughout the workflow, as the quality of the extracted RNA directly determines the reliability of downstream expression analyses.
 
 ## Biological samples
+
+RNA is highly susceptible to degradation by ubiquitous RNases, making rapid and effective preservation essential for metatranscriptomic studies. RNAlater is a non-toxic aqueous reagent that permeates tissues and stabilizes RNA by inactivating RNases, allowing sample storage at -80°C without significant transcript degradation. Proper sample-to-reagent ratios and immediate processing are critical to ensuring that the captured transcriptional profile accurately reflects the in vivo state of the microbial community.
+
 - Process 500 µL of RNAlater (Ambion) for every 1 g of fecal sample and store it at -80°C
 
 ## RNA preparation
+
+Total RNA extraction from fecal samples requires a combination of mechanical lysis (bead-beating) and chemical purification to efficiently lyse diverse microbial cell types while preserving RNA integrity. The protocol below uses a phenol-chloroform extraction followed by silica column purification (RNeasy mini plus kit) to obtain high-quality total RNA. A critical downstream step is DNase treatment (TURBO DNase) to remove co-extracted genomic DNA, which would otherwise introduce false signals in expression analyses.
+
 ### Reagents
 -RLT buffer (Qiagen), β-mercaptoethanol, Superase-In 20U/μL (Thermo Fisher Scientific), proteinase K (20mg/mL), 100% ethanol, 70% ethanol, 3M sodium acetate, phenol/chloroform/isoamyl alcohol 25:24:1 (pH5.2), RNase-free water
 -kit RNeasy mini plus kit (Qiagen), TURBO DNA-free™ (Ambion) 
@@ -65,11 +71,17 @@ Optional; Qubit fluorometer (Thermo Fisher Scientific), Fragment analyzer
 - Centrifuge at 10,000 rpm for 1 minute and 30 seconds, and transfer the supernatant to a new e-tube.
 
 ### rRNA depletion
+
+Ribosomal RNA (rRNA) typically constitutes 80–90% of total RNA in microbial samples, vastly outnumbering messenger RNA (mRNA). Without rRNA depletion, the majority of sequencing reads would be uninformative for gene expression analysis. Because metatranscriptomic samples contain RNA from both the host and diverse bacterial species, two separate depletion kits are applied sequentially: one targeting host (plant/mammalian) rRNA and another targeting bacterial rRNA using probe-based enzymatic degradation (Ribo-Zero Plus).
+
 - Host rRNA remove Illumina TruSeq Stranded Total RNA Library Prep Plant Kit (Illumina, # 20020611)
 - Bacterial rRNA remove Illumina Stranded Total RNA Library Prep with Ribo-Zero Plus kit (Illumina, #20040529)
 
 
 ## Sequencing
+
+Once rRNA-depleted RNA is obtained, it is converted into a strand-specific cDNA library suitable for Illumina sequencing. Strand-specific (stranded) library preparation preserves the information about which DNA strand was originally transcribed, enabling accurate determination of sense versus antisense transcription — a distinction that is particularly important in prokaryotic genomes where overlapping genes on opposite strands are common.
+
 ### Sequencing library preparation  
 - Perform mRNA fragmentation using divalent cations.
 - First strand cDNA synthesis using SuperScript II reverse transcriptase (Invitrogen, #18064014) with random primers.

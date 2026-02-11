@@ -4,10 +4,16 @@
 The quality of metagenomic analysis is fundamentally determined by the quality of the input DNA. This chapter describes the sample collection, storage, and DNA extraction protocols optimized for both Illumina short-read and PacBio long-read whole metagenome shotgun (WMS) sequencing. Proper sample handling and DNA preparation are essential to ensure high sequencing yield, minimize host contamination, and preserve the microbial community composition representative of the original environment. Short-read sequencing requires high-purity DNA with minimal fragmentation, while long-read sequencing demands high-molecular-weight DNA with minimal shearing, necessitating different extraction approaches.
 
 ## Biological samples
+
+Consistent and standardized sample collection is the foundation of reproducible metagenomic studies. The method of collection, preservation, and storage directly influences the DNA yield, microbial community composition, and downstream sequencing quality. Immediate freezing at -80°C minimizes shifts in community structure caused by continued microbial growth or cell lysis at ambient temperatures.
+
 Collect the fecal sample using the sampling spoon and spatula of the fecal collection kit (NBG-4, Noble Biosciences), shake well to homogenize the sample, and store at -80℃.
 
 
 ## DNA preparation for short reads sequencing
+
+Illumina short-read sequencing requires high-purity, double-stranded DNA free of PCR inhibitors. Bead-beating-based mechanical lysis (FastDNA SPIN Kit) is recommended for fecal samples because it efficiently disrupts both Gram-positive and Gram-negative bacterial cell walls, providing a more complete representation of the microbial community compared to chemical lysis alone. The protocol below typically yields 1–10 µg of DNA suitable for standard shotgun library preparation.
+
 ### Reagents  
 **FastDNA SPIN Kit for Feces (MP Biomedicals)**  
 - Sodium Phosphate Buffer (MP Biomedicals), MT Buffer (MP Biomedicals), PLS Solution (MP Biomedicals), PPS Solution (MP Biomedicals), Wash Buffer #1(MP Biomedicals), Wash Buffer #2 (MP Biomedicals), TES (MP Biomedicals), 100% ethanol
