@@ -18,7 +18,7 @@ $ awk '/^>/ {if (length(seq) <= 210) {print header; print seq} } {if (/^>/) {hea
 # run CD-hit for clustering
 $ cd-hit -i MAG_smallprotein.ffn -o example -n 2 -p 1 -c 0.5 -d 200 -M 50000 -l 5 -s 0.95 -aL 0.95 -g 1
 ```
-After this initial filtering, you can proceed to determine whether these small proteins have similar functions or if they represent new small proteins. To do this, you can use CD-HIT to cluster these proteins.
+After this initial filtering, you can proceed to determine whether these small proteins have similar functions or if they represent new small proteins. To do this, you can use CD-HIT [](doi:10.1093/bioinformatics/bts565) to cluster these proteins.
 CD-HIT groups genes with similar sequences, generating files composed of representative sequences for each cluster.
 
 Following the clustering step, you can use RNAcode to analyze and obtain information about the protein coding regions of the genes.
@@ -33,16 +33,3 @@ $ clustalw output
 $ RNAcode output.aln --outfile results.gtf --gtf --best-only --cutoff 0.01 --eps data.aln
 ```
 
-### References
-
-Hyatt D, Chen GL, Locascio PF, Land ML, Larimer FW, Hauser LJ. Prodigal: prokaryotic gene recognition and translation initiation site identification. *BMC Bioinformatics*. 2010;11:119. doi:10.1186/1471-2105-11-119
-
-Hemm MR, Paul BJ, Schneider TD, Storz G, Rudd KE. Small membrane proteins found by comparative genomics and proteomics. *Mol Microbiol*. 2008;70(6):1487-1501. doi:10.1111/j.1365-2958.2008.06495.x
-
-Hao Y, Gong S, Otu D, Liu Z, Jiang W, Wang J, Shen Y. SmProt: A database of small proteins encoded by alternative translation initiation and uORFs. *Nucleic Acids Res*. 2018;46(D1):D567-D573. doi:10.1093/nar/gkx830
-
-Ingolia NT, Ghaemmaghami S, Newman JR, Weissman JS. Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling. *Science*. 2009;324(5924):218-223. doi:10.1126/science.1168978
-
-Ingolia NT. Ribosome profiling: new views of translation, from single codons to genome scale. *Nat Rev Genet*. 2014;15(3):205-213. doi:10.1038/nrg3645
-
-Li H, Handsaker B, Wysoker A, Fennell T, Ruan J, Homer N, Marth G, Abecasis G, Durbin R. The Sequence Alignment/Map format and SAMtools. *Bioinformatics*. 2009;25(16):2078-2079. doi:10.1093/bioinformatics/btp352

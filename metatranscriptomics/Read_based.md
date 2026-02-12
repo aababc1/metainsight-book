@@ -1,6 +1,6 @@
 # Reads-based profiling
 
-Apart from eggNOG-mapper, you can also obtain information about metabolic pathways using [HUMAnN](https://huttenhower.sph.harvard.edu/humann/).
+Apart from eggNOG-mapper, you can also obtain information about metabolic pathways using [HUMAnN](https://huttenhower.sph.harvard.edu/humann/) [](doi:10.1038/s41592-018-0176-y).
 
 HUMAnN (HMP Unified Metabolic Analysis Network) is a software designed to profile microbial metabolism and molecular functions from metagenomic or metatranscriptomic sequence data.
 It accepts various types of input files, including .fastq files from metagenomes or metatranscriptomes after host data removal and quality trimming, alignment result files (.sam or .bam), and gene information with count data in .tsv and .biom formats.
@@ -34,12 +34,3 @@ HUMAnN generates several files (e.g., bowtie results, diamond results), and you 
   <figcaption><b>Example of a barplot visualization result of path information derived from HUMAnN results</b></figcaption>
 </figure>
 
-### References
-
-1. Franzosa EA, McIver LJ, Rahnavard G, et al. Species-level functional profiling of metagenomes and metatranscriptomes. *Nat Methods*. 2018;15(11):962-968. doi:10.1038/s41592-018-0176-y
-
-2. Segata N, Waldron L, Ballarini A, Narasimhan V, Jousson O, Huttenhower C. Metagenomic microbial community profiling with species-level resolution using MetaPhlAn 2.0. *Nat Methods*. 2012;9(8):811-814. doi:10.1038/nmeth.2066
-
-3. Langmead B, Salzberg SL. Fast gapped-read alignment with Bowtie 2. *Nat Methods*. 2012;9(4):357-359. doi:10.1038/nmeth.1923
-
-4. Buchfink B, Xie C, Huson DH. Fast and sensitive protein alignment using DIAMOND. *Nat Methods*. 2015;12(1):59-60. doi:10.1038/nmeth.3176

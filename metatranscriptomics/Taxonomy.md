@@ -19,12 +19,3 @@ You can compare taxonomy information not only at the DNA level but also from RNA
 If you have metagenomic information, it can be used for reference. In cases where metagenomic information is unavailable, you can verify taxonomy at the RNA level.
 The analysis results allow for visualization of cluster composition and read count ratios at each taxonomy level, from phylum to species. Additionally, a taxonomy chart reflecting hierarchical taxonomy levels is available for examination.
 
-### References
-
-1. Menzel P, Ng KL, Krogh A. Fast and sensitive taxonomic classification for metagenomics with Kaiju. *Nat Commun*. 2016;7:11257. doi:10.1038/ncomms11257
-
-2. Wood DE, Salzberg SL. Kraken: ultrafast metagenomic sequence classification using exact alignments. *Genome Biol*. 2014;15(3):R46. doi:10.1186/gb-2014-15-3-r46
-
-3. Segata N, Waldron L, Ballarini A, Narasimhan V, Jousson O, Huttenhower C. Metagenomic microbial community profiling with species-level resolution using MetaPhlAn 2.0. *Nat Methods*. 2012;9(8):811-814. doi:10.1038/nmeth.2066
-
-4. Minot SS, Krumm N, Greenfield NB. One Codex: A Sensitive and Accurate Data Platform for Genomic Microbial Identification. *mBio*. 2015;6(5):e00860-15.

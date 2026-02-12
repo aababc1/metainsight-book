@@ -4,7 +4,7 @@ The methods for analyzing preprocessed reads can be categorized into two main ap
 Read-based profiling involves taxonomic and functional profiling without the need for assembly, primarily relying on k-mer matching.
 This approach is particularly useful for analyzing low-depth samples that are challenging to assemble. It offers the advantage of faster analysis completion.
 
-[HUMAnN 3.0](https://huttenhower.sph.harvard.edu/humann/), for instance, utilizes the MetaPhlAn program for pre-taxonomic profiling.
+[HUMAnN 3.0](https://huttenhower.sph.harvard.edu/humann/) [](doi:10.1038/s41592-018-0176-y), for instance, utilizes the MetaPhlAn [](doi:10.1038/nmeth.2066) program for pre-taxonomic profiling.
 It then employs a translated search to examine unmapped reads, facilitating further analysis and quantification of gene families and pathways across the entire pangenomes.
 
 ```bash
@@ -75,9 +75,3 @@ After grouping by reaction, you can plot specific reactions, sort bar graphs bas
   <figcaption><b>Sorted and facetted bar plot for COA-PWY</b></figcaption>
 </figure>
 
-### References
-
-1. Franzosa EA, McIver LJ, Rahnavard G, et al. Species-level functional profiling of metagenomes and metatranscriptomes. *Nat Methods*. 2018;15(11):962-968. doi:10.1038/s41592-018-0176-y
-2. Segata N, Waldron L, Ballarini A, et al. Metagenomic microbial community profiling using unique clade-specific marker genes. *Nat Methods*. 2012;9(8):811-814. doi:10.1038/nmeth.2066
-3. Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. *Nucleic Acids Res*. 2000;28(1):27-30. doi:10.1093/nar/28.1.27
-4. Karp PD, Billington R, Caspi R, et al. The BioCyc collection of microbial genomes and metabolic pathways. *Briefings Bioinform*. 2019;20(4):1085-1093. doi:10.1093/bib/bbx085

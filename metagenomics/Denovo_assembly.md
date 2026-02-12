@@ -10,9 +10,9 @@ To overcome this limitation, de novo assembly is employed using assemblers to ex
 This approach enables in-depth profiling of genomic components and the discovery of previously unknown sequences since it is a database-independent process.
 
 Currently, various assemblers are available. Some assemblers are specifically designed for the efficient assembly of short reads.
-Among the most widely utilized assemblers, [MEGAHIT](https://github.com/voutcn/megahit) and [metaSPAdes](https://cab.spbu.ru/software/meta-spades/) stand out.
+Among the most widely utilized assemblers, [MEGAHIT](https://github.com/voutcn/megahit) [](doi:10.1093/bioinformatics/btv033) and [metaSPAdes](https://cab.spbu.ru/software/meta-spades/) [](doi:10.1101/gr.213959.116) stand out.
 metaSPAdes is particularly renowned for its performance with high-depth samples. However, it demands a substantial amount of memory, even for small-sized metagenome data.
-MEGAHIT shows competitive assembly quality and efficient memory usage compared to metaSPAdes. [&#91;ref&#93;](https://doi.org/10.1038/s41596-020-00480-3).
+MEGAHIT shows competitive assembly quality and efficient memory usage compared to metaSPAdes.
 
 MEGAHIT employs k-mers, and the size of these k-mers can be adjusted based on the sample's complexity using the `--k-min` and `--k-max` options.
 When dealing with high-depth samples, it is advisable to select a relatively larger k-mer size (typically 25-31) to prevent excessive complexity in the de Bruijn graph.
@@ -31,7 +31,7 @@ $ conda deactivate
 
 ## Long reads assembly
 
-PacBio HiFi long reads (typically 10–20 kb with >99% accuracy) enable the resolution of repetitive genomic regions and the recovery of near-complete metagenome-assembled genomes that are inaccessible through short-read assembly alone. The assembler [hifiasm-meta](https://github.com/lh3/hifiasm-meta) is specifically designed for metagenomic HiFi data, producing high-quality primary and alternate contigs by leveraging the length and accuracy of HiFi reads to resolve strain-level haplotypes within complex microbial communities. Unlike short-read assemblers based on de Bruijn graphs, hifiasm-meta uses an overlap-based approach that better preserves long-range genomic structure.
+PacBio HiFi long reads (typically 10–20 kb with >99% accuracy) enable the resolution of repetitive genomic regions and the recovery of near-complete metagenome-assembled genomes that are inaccessible through short-read assembly alone. The assembler [hifiasm-meta](https://github.com/lh3/hifiasm-meta) [](doi:10.1038/s41592-022-01478-3) is specifically designed for metagenomic HiFi data, producing high-quality primary and alternate contigs by leveraging the length and accuracy of HiFi reads to resolve strain-level haplotypes within complex microbial communities. Unlike short-read assemblers based on de Bruijn graphs, hifiasm-meta uses an overlap-based approach that better preserves long-range genomic structure.
 
 ```bash
 # run hifiasm_meta 
@@ -47,7 +47,7 @@ It contains data about the graph generated during the assembly process.
 The structure of the graph file is akin to a de Bruijn graph, illustrating the connectivity of nodes and edges.
 These graphs depict the interactions among overlapping DNA sequences, aiding in the assembly process.
 
-When running [Hifiasm-meta](https://github.com/lh3/hifiasm-meta), the output files are as follows.
+When running [Hifiasm-meta](https://github.com/lh3/hifiasm-meta) [](doi:10.1038/s41592-022-01478-3), the output files are as follows.
 
 
 __1. Raw unitig graph: asm.r_utg*.gfa__  
@@ -110,9 +110,3 @@ The left Graph shows cumulative length as the contig index increases and the rig
   <figcaption><b></b></figcaption>
 </figure>
 
-### References
-
-1. Li D, Liu CM, Luo R, et al. MEGAHIT: an ultra-fast single-node solution for large and complex metagenomics assembly via succinct de Bruijn graph. *Bioinformatics*. 2015;31(10):1674-1676. doi:10.1093/bioinformatics/btv033
-2. Nurk S, Meleshko D, Korobeynikov A, et al. metaSPAdes: a new versatile metagenomic assembler. *Genome Res*. 2017;27(5):824-834. doi:10.1101/gr.213959.116
-3. Feng X, Cheng H, Portik D, et al. Hifiasm: de novo assembly of high-fidelity long reads. *Nat Methods*. 2022;19(6):671-674. doi:10.1038/s41592-022-01478-3
-4. Gurevich A, Saveliev V, Vyatkin N, et al. QUAST: quality assessment tool for genome assemblies. *Bioinformatics*. 2013;29(8):1072-1075. doi:10.1093/bioinformatics/btt086

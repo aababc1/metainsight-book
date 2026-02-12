@@ -96,12 +96,3 @@ TapeStation D1000 ScreenTape (Agilent Technologies, # 5067-5582)
 ### Sequencing
 - Perform paired-end (2×150 bp) sequencing on an Illumina NovaSeq (Illumina) instrument using the final indexed sequencing library.
 
-### References
-
-1. Illumina. TruSeq Stranded Total RNA Library Prep Kit - Reference Guide. Document #15031048. Illumina, Inc.
-
-2. Ambion. RNAlater Stabilization Solution - User Guide. Life Technologies Corporation.
-
-3. Thermo Fisher Scientific. TURBO DNA-free Kit - User Guide. Document #AM1907.
-
-4. Agilent Technologies. TapeStation D1000 ScreenTape System User Guide. Document #G2964-90030.

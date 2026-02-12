@@ -7,7 +7,7 @@
 
 In metagenome analysis, binning is the process of grouping contigs based on specific criteria, primarily relying on sequence composition and coverage data.
 By utilizing a binning program to cluster contigs, it becomes possible to reconstruct complete microbial genomes.
-In addition to [MetaBAT2](https://bitbucket.org/berkeleylab/metabat/src/master/) we used, other widely used binning programs are [MaxBin 2.0](https://sourceforge.net/projects/maxbin/) and [CONCOCT](https://github.com/BinPro/CONCOCT). 
+In addition to [MetaBAT2](https://bitbucket.org/berkeleylab/metabat/src/master/) [](doi:10.7717/peerj.7359) we used, other widely used binning programs are [MaxBin 2.0](https://sourceforge.net/projects/maxbin/) [](doi:10.1093/bioinformatics/btv638) and [CONCOCT](https://github.com/BinPro/CONCOCT) [](doi:10.1038/nmeth.3103). 
 
 To perform binning using MetaBAT2, a sam file with coverage information is required.
 For short reads data, this can be obtained by using the BBmap script to map the trimmed sequence to the template of the assembled contigs.
@@ -54,7 +54,7 @@ $ MetaBAT2 -i final.contigs.fa -a jgi.depth.txt -o bins_dir/bin
 $ conda deactivate 
 ```
 
-After the completion of binning using MetaBAT2, the quality of the bins is assessed using [CheckM](https://github.com/Ecogenomics/CheckM).
+After the completion of binning using MetaBAT2, the quality of the bins is assessed using [CheckM](https://github.com/Ecogenomics/CheckM) [](doi:10.1101/gr.186072.114).
 CheckM is a program designed to gauge the quality of genomes recovered from isolates, single cells, or metagenomes.
 The program furnishes information about phylogenetic lineage, genetic characteristics (such as GC contents and coding density), contamination, completeness, and strain heterogeneity.
 It accomplishes this by analyzing single-copy genes within the genome.
@@ -73,13 +73,3 @@ It displays the marker lineage and the number of marker genes in the generated b
   <figcaption><b>Example of CheckM result</b></figcaption>
 </figure>
 
-### References
-
-1. Kang DD, Li F, Kirton ES, et al. MetaBAT 2: an improved binning algorithm, assembly-independent binning and recovering metagenome-assembled genomes from heterogeneous sources. *PeerJ*. 2019;7:e7359. doi:10.7717/peerj.7359
-2. Wu YW, Simmons BA, Singer SW. MaxBin 2.0: an automated binning algorithm to recover genomes from metagenomic data. *Bioinformatics*. 2016;32(4):605-607. doi:10.1093/bioinformatics/btv638
-3. Alneberg J, Bjarnason BS, de la Cruz FM, et al. Binning metagenomic contigs by coverage and composition. *Nat Methods*. 2014;11(11):1144-1146. doi:10.1038/nmeth.3103
-4. Sieber CM, Probst AJ, Sharrar A, et al. Recovery of genomes from metagenomes via a dereplication, aggregation and scoring strategy. *Nat Microbiol*. 2018;3(7):836-843. doi:10.1038/s41564-018-0171-1
-5. Parks DH, Imelfort M, Skennerton CT, et al. CheckM: assessing the quality of microbial genomes recovered from isolates, single cells, and metagenomes. *Genome Res*. 2015;25(7):1043-1055. doi:10.1101/gr.186072.114
-6. Chklovski A, Parks DH, Woodcroft BJ, et al. CheckM2: a rapid, scalable and accurate tool for assessing microbial genome quality using machine learning. *Nat Methods*. 2023;20(11):1203-1212. doi:10.1038/s41592-023-01940-w
-7. Li H, Durbin R. Fast and accurate long-read alignment with Burrows-Wheeler transform. *Bioinformatics*. 2009;25(14):1754-1760. doi:10.1093/bioinformatics/btp324
-8. Quinlan AR, Hall IM. BEDTools: a flexible suite of utilities for comparing genomic features. *Bioinformatics*. 2010;26(6):841-842. doi:10.1093/bioinformatics/btq033

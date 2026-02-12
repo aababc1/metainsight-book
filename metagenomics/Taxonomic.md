@@ -18,7 +18,7 @@ However, their advantage lies in their sensitivity and accuracy since they are b
 The choice of the best program depends on the nature of the data you are analyzing and your database.
 Kaiju is one of the representative DNA-to-protein programs, utilizing the NCBI taxonomy and protein reference database for the classification of microorganisms and viruses.
 
-To run the [Kaiju](https://bioinformatics-centre.github.io/kaiju/) program, you need to download databases, and the duration of this process may vary based on your computer's performance.
+To run the [Kaiju](https://bioinformatics-centre.github.io/kaiju/) [](doi:10.1038/ncomms11257) program, you need to download databases, and the duration of this process may vary based on your computer's performance.
 The table below lists the available databases.
 
 <figure align = "center">
@@ -59,9 +59,3 @@ The results of Kaiju's analysis can also be downloaded as a `tsv` file using the
   <figcaption><b></b></figcaption>
 </figure>
 
-### References
-
-1. Wood DE, Lu J, Langmead B. Improved metagenomic analysis with Kraken 2. *Genome Biol*. 2019;20(1):257. doi:10.1186/s13059-019-1891-0
-2. Lu J, Breitwieser FP, Thielen P, et al. Bracken: estimating species abundance in metagenomics data. *PeerJ Comput Sci*. 2017;3:e104. doi:10.7717/peerj-cs.104
-3. Segata N, Waldron L, Ballarini A, et al. Metagenomic microbial community profiling using unique clade-specific marker genes. *Nat Methods*. 2012;9(8):811-814. doi:10.1038/nmeth.2066
-4. Buchfink B, Xie C, Huson DH. Fast and sensitive protein alignment using DIAMOND. *Nat Methods*. 2015;12(1):59-60. doi:10.1038/nmeth.3176

@@ -1,6 +1,6 @@
 # Reads-based profiling
 
-Apart from eggNOG-mapper, you can also obtain information about metabolic pathways using [HUMAnN](https://huttenhower.sph.harvard.edu/humann/).
+Apart from eggNOG-mapper, you can also obtain information about metabolic pathways using [HUMAnN](https://huttenhower.sph.harvard.edu/humann/) [](doi:10.1038/s41592-018-0176-y).
 
 HUMAnN (HMP Unified Metabolic Analysis Network) is a software designed to profile microbial metabolism and molecular functions from metagenomic or metatranscriptomic sequence data.
 It accepts various types of input files, including .fastq files from metagenomes or metatranscriptomes after host data removal and quality trimming, alignment result files (.sam or .bam), and gene information with count data in .tsv and .biom formats.
@@ -34,14 +34,3 @@ HUMAnN generates several files (e.g., bowtie results, diamond results), and you 
   <figcaption><b>Example of a barplot visualization result of path information derived from HUMAnN results</b></figcaption>
 </figure>
 
-### References
-
-Franzosa EA, McIver LJ, Rahnavard G, Thompson LR, Schirmer M, Weingart G, Lipson KS, Knight R, Caporaso JG, Segata N, Huttenhower C. Species-level functional profiling of metagenomes and metatranscriptomes. *Nat Methods*. 2018;15(11):962-968. doi:10.1038/s41592-018-0176-y
-
-Segata N, Waldron L, Ballarini A, Narasimhan V, Jousson O, Huttenhower C. Metagenomic microbial community profiling using unique clade-specific marker genes. *Nat Methods*. 2012;9(8):811-814. doi:10.1038/nmeth.2066
-
-Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. *Nucleic Acids Res*. 2000;28(1):27-30. doi:10.1093/nar/28.1.27
-
-Ingolia NT, Ghaemmaghami S, Newman JR, Weissman JS. Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling. *Science*. 2009;324(5924):218-223. doi:10.1126/science.1168978
-
-Ingolia NT. Ribosome profiling: new views of translation, from single codons to genome scale. *Nat Rev Genet*. 2014;15(3):205-213. doi:10.1038/nrg3645

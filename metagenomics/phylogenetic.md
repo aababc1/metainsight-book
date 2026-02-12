@@ -5,7 +5,7 @@
 </figure> 
 
 There are various methods for performing taxonomic assignment after recovering multiple genomes from a metagenome.
-Among these methods, the [GTDB database](https://gtdb.ecogenomic.org) and [GTDB-tk](https://ecogenomics.github.io/GTDBTk/index.html), which facilitates classification, are among the most commonly used.
+Among these methods, the [GTDB database](https://gtdb.ecogenomic.org) and [GTDB-tk](https://ecogenomics.github.io/GTDBTk/index.html) [](doi:10.1093/bioinformatics/btz848), which facilitates classification, are among the most commonly used.
 GTDB is a database that compiles information about metagenome-assembled genomes (MAGs) recovered from diverse environmental samples based on data from RefSeq and GenBank.
 
 GTDB-tk consists of multiple steps, including an identification step that utilizes Prodigal and HMMER, an alignment step for concatenating marker genes, and a classification step that involves comparison with the GTDB reference tree using the pplacer program and the maximum-likelihood placement technique.
@@ -32,7 +32,7 @@ $ conda deactivate
   <figcaption><b></b></figcaption>  
 </figure>
 
-Besides [GTDB-tk](https://ecogenomics.github.io/GTDBTk/index.html), another widely used program is [PhyloPhlAn](https://huttenhower.sph.harvard.edu/phylophlan). This program is known for its accuracy and speed.
+Besides [GTDB-tk](https://ecogenomics.github.io/GTDBTk/index.html) [](doi:10.1093/bioinformatics/btz848), another widely used program is [PhyloPhlAn](https://huttenhower.sph.harvard.edu/phylophlan). This program is known for its accuracy and speed.
 It enables the characterization and construction of phylogenetic trees for microbial genomes and offers simple visualization options.  
 
 ```bash
@@ -54,9 +54,3 @@ In this process, a mapping file for the bins entered in the `--map` option shoul
   <figcaption><b></b></figcaption>
 </figure>
 
-### References
-
-1. Chaumeil PA, Mussig AJ, Hugenholtz P, et al. GTDB-Tk: a toolkit to classify genomes with the Genome Taxonomy Database. *Bioinformatics*. 2020;36(6):1925-1927. doi:10.1093/bioinformatics/btz848
-2. Asnicar F, Thomas AM, Beghini F, et al. Serotype and clonal analysis of pathogenic Listeria monocytogenes strains. *Nat Commun*. 2020;11(1):2500. doi:10.1038/s41467-020-16366-7
-3. Asnicar F, Weingart G, Tickle TL, et al. Compact graphical representation of phylogenetic data and metadata with GraPhlAn. *PeerJ*. 2015;3:e1029. doi:10.7717/peerj.1029
-4. Hyatt D, Chen GL, Locascio PF, et al. Prodigal: prokaryotic gene recognition and translation initiation site identification. *BMC Bioinformatics*. 2010;11:119. doi:10.1186/1471-2105-11-119

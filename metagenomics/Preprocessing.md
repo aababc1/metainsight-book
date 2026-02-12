@@ -10,8 +10,8 @@ Raw sequencing data inevitably contains artifacts that must be removed before do
 ## Short reads
 
 For quality control of raw sequence data, two crucial steps are (1) removing low-quality bases and (2) eliminating artifacts such as barcodes, adaptors, and chimeras.
-[KneadData](https://huttenhower.sph.harvard.edu/kneaddata) employs [Trimmomatic](http://www.usadellab.org/cms/index.php?page=trimmomatic) for quality filtering and trimming and Tandem Repeat Finder (TRF) for read preprocessing.
-Additionally, it utilizes [Bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/manual.shtml) for FastQC analysis and read alignment.
+[KneadData](https://huttenhower.sph.harvard.edu/kneaddata) employs [Trimmomatic](http://www.usadellab.org/cms/index.php?page=trimmomatic) [](doi:10.1093/bioinformatics/btu170) for quality filtering and trimming and Tandem Repeat Finder (TRF) for read preprocessing.
+Additionally, it utilizes [Bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/manual.shtml) [](doi:10.1038/nmeth.1923) for FastQC analysis and read alignment.
 When using Trimmomatic, you can specify the minimum length of the sequence as a percentage of the input read with the `--trimmomatic-options='MINLEN:'` parameter.
 ```bash
 # Downlodad host genome (ex.Human)
@@ -46,7 +46,7 @@ However, long reads require multiple consistent matches across the read for accu
 When seed-and-extend methods are applied to long reads, issues with extension and alignment accuracy can arise.
 To address these challenges, alternative methods like seed-and-chain have been developed.
 
-[minimap2](https://github.com/lh3/minimap2) is a versatile sequence mapping program that is effective for aligning and analyzing long reads such as PacBio and Oxford Nanopore technologies.
+[minimap2](https://github.com/lh3/minimap2) [](doi:10.1093/bioinformatics/bty191) is a versatile sequence mapping program that is effective for aligning and analyzing long reads such as PacBio and Oxford Nanopore technologies.
 In this pipeline, we will use minimap2 for long read mapping.
 
 ```bash
@@ -63,10 +63,3 @@ $ samtools view -bf 0x04 N008.aln.bam > N008.aln.unmapped.bam
 $ samtools bam2fq N008.aln.unmapped.bam > N008.aln.unmapped.fq
 ```
 
-### References
-
-1. Bolger AM, Lohse M, Usadel B. Trimmomatic: a flexible trimmer for Illumina sequence data. *Bioinformatics*. 2014;30(15):2114-2120. doi:10.1093/bioinformatics/btu170
-2. Langmead B, Salzberg SL. Fast gapped-read alignment with Bowtie 2. *Nat Methods*. 2012;9(4):357-359. doi:10.1038/nmeth.1923
-3. Li H, Handsaker B, Wysoker A, et al. The Sequence Alignment/Map format and SAMtools. *Bioinformatics*. 2009;25(16):2078-2079. doi:10.1093/bioinformatics/btp352
-4. Martin M. Cutadapt removes adapter sequences from high-throughput sequencing reads. *EMBnet.journal*. 2011;17(1):10-12. doi:10.14806/ej.17.1.200
-5. Andrews S. FastQC: a quality control tool for high throughput sequence data. Babraham Bioinformatics. 2010.
