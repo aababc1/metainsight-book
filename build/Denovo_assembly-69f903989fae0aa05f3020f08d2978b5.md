@@ -104,8 +104,15 @@ $ conda deactivate
 - Mismatches # N's: Number of uncalled bases that were not assembled
 - Mismatches # N's per 100kbp: Number of uncalled bases per 100000 bases
 
-The left Graph shows cumulative length as the contig index increases and the right graph shows GC contents of contigs 
+The left Graph shows cumulative length as the contig index increases and the right graph shows GC contents of contigs
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaGenomic/img/G_7_4.png?raw=true" style="width:90%">
-  <figcaption><b></b></figcaption>  
+  <figcaption><b></b></figcaption>
 </figure>
+
+### References
+
+1. Li D, Liu CM, Luo R, et al. MEGAHIT: an ultra-fast single-node solution for large and complex metagenomics assembly via succinct de Bruijn graph. *Bioinformatics*. 2015;31(10):1674-1676. doi:10.1093/bioinformatics/btv033
+2. Nurk S, Meleshko D, Korobeynikov A, et al. metaSPAdes: a new versatile metagenomic assembler. *Genome Res*. 2017;27(5):824-834. doi:10.1101/gr.213959.116
+3. Feng X, Cheng H, Portik D, et al. Hifiasm: de novo assembly of high-fidelity long reads. *Nat Methods*. 2022;19(6):671-674. doi:10.1038/s41592-022-01478-3
+4. Gurevich A, Saveliev V, Vyatkin N, et al. QUAST: quality assessment tool for genome assemblies. *Bioinformatics*. 2013;29(8):1072-1075. doi:10.1093/bioinformatics/btt086

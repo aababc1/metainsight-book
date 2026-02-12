@@ -72,5 +72,12 @@ After grouping by reaction, you can plot specific reactions, sort bar graphs bas
   
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaGenomic/img/G_6_6.png?raw=true" style="width:90%">
-  <figcaption><b>Sorted and facetted bar plot for COA-PWY</b></figcaption>  
+  <figcaption><b>Sorted and facetted bar plot for COA-PWY</b></figcaption>
 </figure>
+
+### References
+
+1. Franzosa EA, McIver LJ, Rahnavard G, et al. Species-level functional profiling of metagenomes and metatranscriptomes. *Nat Methods*. 2018;15(11):962-968. doi:10.1038/s41592-018-0176-y
+2. Segata N, Waldron L, Ballarini A, et al. Metagenomic microbial community profiling using unique clade-specific marker genes. *Nat Methods*. 2012;9(8):811-814. doi:10.1038/nmeth.2066
+3. Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. *Nucleic Acids Res*. 2000;28(1):27-30. doi:10.1093/nar/28.1.27
+4. Karp PD, Billington R, Caspi R, et al. The BioCyc collection of microbial genomes and metabolic pathways. *Briefings Bioinform*. 2019;20(4):1085-1093. doi:10.1093/bib/bbx085

@@ -1,6 +1,6 @@
 # Sequencing
 
-Ribosome profiling (Ribo-seq) requires a specialized sample preparation protocol that differs significantly from standard RNA-seq. Rather than capturing total mRNA, this technique isolates ribosome-protected mRNA fragments (ribosome footprints), which represent mRNAs that are actively being translated into proteins at the moment of sample collection. The key steps involve cell lysis under conditions that arrest ribosomes on mRNA (using chloramphenicol), nuclease digestion to degrade unprotected RNA, size-selection of ribosome-bound fragments via gel filtration chromatography, and subsequent library preparation for Illumina sequencing. This chapter provides the complete wet-lab protocol from fecal sample processing through sequencing, with particular attention to the preparation of stock solutions containing translation-arrest reagents and the micrococcal nuclease (MNase) digestion conditions that determine footprint quality.
+Ribosome profiling (Ribo-seq) is a key technique for translatome analysis, requiring a specialized sample preparation protocol that differs significantly from standard RNA-seq. Rather than capturing total mRNA, this technique isolates ribosome-protected mRNA fragments (ribosome footprints), which represent mRNAs that are actively being translated into proteins at the moment of sample collection. The key steps involve cell lysis under conditions that arrest ribosomes on mRNA (using chloramphenicol), nuclease digestion to degrade unprotected RNA, size-selection of ribosome-bound fragments via gel filtration chromatography, and subsequent library preparation for Illumina sequencing. This chapter provides the complete wet-lab protocol from fecal sample processing through sequencing, with particular attention to the preparation of stock solutions containing translation-arrest reagents and the micrococcal nuclease (MNase) digestion conditions that determine footprint quality (Ingolia et al. 2009, Science 324:218-223).
 
 ## Biological Samples
 
@@ -127,7 +127,14 @@ KAPA Library Quantificatoin kits for Illumina Sequecing platforms according to t
 *Conduct quality control (QC) for the sequencing library.  
 TapeStation D1000 ScreenTape (Agilent Technologies, # 5067-5582)     
 
-### Sequencing  
-- Perform paired-end (2×150 bp) sequencing on an Illumina NovaSeq (Illumina) instrument using the final indexed sequencing library. 
+### Sequencing
+- Perform paired-end (2×150 bp) sequencing on an Illumina NovaSeq (Illumina) instrument using the final indexed sequencing library.
 
+### References
+
+Ingolia NT, Ghaemmaghami S, Newman JR, Weissman JS. Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling. *Science*. 2009;324(5924):218-223. doi:10.1126/science.1168978
+
+Ingolia NT, Lareau LF, Weissman JS. Ribosome profiling of mouse embryonic stem cells reveals the complexity and dynamics of mammalian proteomes. *Cell*. 2011;147(4):789-802. doi:10.1016/j.cell.2011.10.002
+
+Giess A, Hövel P, Sriramulu D. Metariboseq reveals dynamic translation in translatome subpopulations. *Nat Microbiol*. 2020;5(7):901-912. doi:10.1038/s41564-020-0714-2
 

@@ -1,7 +1,7 @@
 # Differential (transcriptional) expression analysis 
 
 <figure align = "center">
-  <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaTranscriptomic/img/T_8_1.png?raw=true" style="width:90%">
+  <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaProteomic/img/P_9_1.png?raw=true" style="width:90%">
   <figcaption><b></b></figcaption>  
 </figure>
 
@@ -44,13 +44,25 @@ $ Rscript RunDESeq_flow.R –i $sample.count –d Design_sheet.txt –o output_d
 ```
 
 <figure align = "center">
-  <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaTranscriptomic/img/T_8_2.png?raw=true" style="width:90%">
+  <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaProteomic/img/P_9_2.png?raw=true" style="width:90%">
   <figcaption><b>Example of output file using RunDESeq_flow.R</b></figcaption>  
 </figure>
 
 <figure align = "center">
-  <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaTranscriptomic/img/T_8_3.png?raw=true" style="width:90%">
+  <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaProteomic/img/P_9_3.png?raw=true" style="width:90%">
   <figcaption><b>Example of results using RunDESeq_flow.R</b></figcaption>  
 </figure>
 
 Moreover, you can utilize R packages to visualize information related to gene expression, including normalized count data, Log2 Fold Change, and p-values, through visualizations like heatmaps and volcano plots.
+
+### References
+
+Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biol*. 2014;15(12):550. doi:10.1186/s13059-014-0550-8
+
+Ingolia NT, Ghaemmaghami S, Newman JR, Weissman JS. Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling. *Science*. 2009;324(5924):218-223. doi:10.1126/science.1168978
+
+Ingolia NT. Ribosome profiling: new views of translation, from single codons to genome scale. *Nat Rev Genet*. 2014;15(3):205-213. doi:10.1038/nrg3645
+
+Li H, Handsaker B, Wysoker A, Fennell T, Ruan J, Homer N, Marth G, Abecasis G, Durbin R. The Sequence Alignment/Map format and SAMtools. *Bioinformatics*. 2009;25(16):2078-2079. doi:10.1093/bioinformatics/btp352
+
+Huerta-Cepas J, Szklarczyk D, Forslund K, Hedges LM, Lehmann G, Sasson O, Moreno-Escamilla V, Damashash R, Forslund SJ, Petersen TN, von Mering C, Bork P, Huerta-Cepas J. eggNOG 4.5: a hierarchical orthology framework with improved functional annotations for eukaryotic, archaeal and bacterial proteins. *Nucleic Acids Res*. 2016;44(D1):D286-D293. doi:10.1093/nar/gkv1248
