@@ -1,1 +1,1 @@
-import{a}from"/build/_shared/chunk-BJB4CASA.js";import"/build/_shared/chunk-VCINEGR4.js";import"/build/_shared/chunk-OZE3FFNP.js";export default a();
+import{a}from"/metainsight-book/build/_shared/chunk-BJB4CASA.js";import"/metainsight-book/build/_shared/chunk-VCINEGR4.js";import"/metainsight-book/build/_shared/chunk-OZE3FFNP.js";export default a();
