@@ -25,8 +25,9 @@ jobs:
       - name: Build book
         run: myst build --html
 
-      - name: Copy dashboard
+      - name: Prepare build output
         run: |
+          touch _build/html/.nojekyll
           if [ -f "dashboard.html" ]; then
             cp dashboard.html _build/html/dashboard.html
           fi
