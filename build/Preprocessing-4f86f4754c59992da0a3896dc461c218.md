@@ -27,10 +27,3 @@ $./fastqc
   <figcaption><b>Example of quality check results of raw sequence with FastQC</b></figcaption>
 </figure>
 
-### References
-
-1. Andrews S. FastQC: a quality control tool for high throughput sequence data. *Babraham Bioinformatics*. 2010.
-
-2. Bolger AM, Lohse M, Usadel B. Trimmomatic: a flexible trimmer for Illumina sequence data. *Bioinformatics*. 2014;30(15):2114-2120. doi:10.1093/bioinformatics/btu170
-
-3. McIver LJ, Abu-Ali G, Franzosa EA, et al. bioBakery: a meta'omics analysis environment. *Bioinformatics*. 2018;34(7):1235-1237.

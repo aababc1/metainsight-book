@@ -47,14 +47,3 @@ However, analyzing ribosome-bound mRNA information alongside transcriptome data 
   <figcaption><b>Predicted translation efficiency; <a href="https://doi.org/10.1038/nrm4069">[ref]</a></b></figcaption>
 </figure>
 
-### References
-
-Ingolia NT, Ghaemmaghami S, Newman JR, Weissman JS. Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling. *Science*. 2009;324(5924):218-223. doi:10.1126/science.1168978
-
-Ingolia NT. Ribosome profiling: new views of translation, from single codons to genome scale. *Nat Rev Genet*. 2014;15(3):205-213. doi:10.1038/nrg3645
-
-Calviello L, Simm S, Wolff J, Bischoff V, Melemenidis A, Rappsilber J, König J. RiboTaper: defining handler positions in ribosome profiling data. *Nat Methods*. 2016;13(2):165-170. doi:10.1038/nmeth.3688
-
-Dunn JG, Weissman JS. Plastid: nucleotide-resolution analysis of next-generation sequencing and genomics data. *BMC Genomics*. 2016;17:958. doi:10.1186/s12864-016-3278-x
-
-Ji Z, Song R, Regev A, Gsponer J. Many lncRNAs activate translation of upstream open reading frames. *Nat Struct Mol Biol*. 2016;23(12):1105-1112. doi:10.1038/nsmb.3331

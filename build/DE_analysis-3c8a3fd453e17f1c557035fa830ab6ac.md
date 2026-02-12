@@ -7,7 +7,7 @@
 
 *To perform the following analysis, you should have the same gene set.
 
-By using metatranscriptomic data from different environmental conditions, you can analyze the differences in gene expression based on the specific environmental conditions and obtain information on which genes are up- or down-regulated in each condition. To achieve this, DESeq2 is run using count information generated from the alignment results and functional annotation locus tags.
+By using metatranscriptomic data from different environmental conditions, you can analyze the differences in gene expression based on the specific environmental conditions and obtain information on which genes are up- or down-regulated in each condition. To achieve this, DESeq2 [](doi:10.1186/s13059-014-0550-8) is run using count information generated from the alignment results and functional annotation locus tags.
 However, for DESeq2 to work, you need count information and input files for each sample's metadata.
 The metadata information can be used in DEG (Differentially Expressed Gene) analysis and various visualization steps.
 
@@ -55,12 +55,3 @@ $ Rscript RunDESeq_flow.R –i $sample.count –d Design_sheet.txt –o output_d
 
 Moreover, you can utilize R packages to visualize information related to gene expression, including normalized count data, Log2 Fold Change, and p-values, through visualizations like heatmaps and volcano plots.
 
-### References
-
-1. Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biol*. 2014;15(12):550. doi:10.1186/s13059-014-0550-8
-
-2. Robinson MD, McCarthy DJ, Smyth GK. edgeR: a Bioconductor package for differential expression analysis of digital gene expression data. *Bioinformatics*. 2010;26(1):139-140. doi:10.1093/bioinformatics/btp616
-
-3. Ritchie ME, Phipson B, Wu D, et al. limma powers differential expression analyses for RNA-sequencing and microarray studies. *Nucleic Acids Res*. 2015;43(7):e47. doi:10.1093/nar/gkv007
-
-4. Anders S, Pyl PT, Huber W. HTSeq—a Python framework to work with high-throughput sequencing data. *Bioinformatics*. 2015;31(2):166-169. doi:10.1093/bioinformatics/btu638

@@ -18,10 +18,10 @@ While translatome analysis provides a functional perspective complementary to me
 Ribo-seq is a powerful technique for translatome analysis that applies sequencing technology to study ribosome-protected mRNA sequences.
 In this method, cells are treated with chloramphenicol to arrest ribosomes in their translational positions, and MNase (micrococcal nuclease) is used to digest RNA that is not protected by ribosomes.
 The sequencing is then performed on the mRNA sequences actively involved in protein synthesis, providing a direct measurement of translation rates across the genome.
-Ribo-seq was originally developed by Ingolia et al. (2009) Science 324:218-223 and has since become the gold standard technique for profiling translation genome-wide. A comprehensive review of ribosome profiling methods is provided by Ingolia (2014) Nat Rev Genet 15:205-213.
+Ribo-seq was originally developed by [](doi:10.1126/science.1168978) and has since become the gold standard technique for profiling translation genome-wide. A comprehensive review of ribosome profiling methods is provided by [](doi:10.1038/nrg3645).
 The technique has been employed to investigate how protein synthesis changes across diverse organisms and conditions. Ribo-seq allows the quantification of translation rates by measuring ribosome occupancy at each mRNA position.
 This technique provides direct insights into which genes are actively being synthesized and at what rates, allowing for accurate quantification of protein synthesis.
-Furthermore, an extension of this approach called MetaRibo-seq has been developed to apply ribosome profiling to complex microbial communities (Giess et al. 2020, Nat Commun 11:3585, DOI:10.1038/s41467-020-17081-z), making it a valuable tool for translatome analysis in environmental and clinical samples preserved in RNALater.
+Furthermore, an extension of this approach called MetaRibo-seq has been developed to apply ribosome profiling to complex microbial communities [](doi:10.1038/s41564-020-0714-2), making it a valuable tool for translatome analysis in environmental and clinical samples preserved in RNALater.
 
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaProteomic/img/P_0_2.jpg?raw=true" style="width:90%">
@@ -33,12 +33,3 @@ Furthermore, an extension of this approach called MetaRibo-seq has been develope
   <figcaption><b>Ribosome profiling workflow ; <a href="https://doi.org/10.1073/pnas.1614788113">[ref]</a></b></figcaption>
 </figure>
 
-### References
-
-Ingolia NT, Ghaemmaghami S, Newman JR, Weissman JS. Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling. *Science*. 2009;324(5924):218-223. doi:10.1126/science.1168978
-
-Ingolia NT. Ribosome profiling: new views of translation, from single codons to genome scale. *Nat Rev Genet*. 2014;15(3):205-213. doi:10.1038/nrg3645
-
-Giess A, Hövel P, Sriramulu D. Metariboseq reveals dynamic translation in translatome subpopulations. *Nat Microbiol*. 2020;5(7):901-912. doi:10.1038/s41564-020-0714-2
-
-Calviello L, Simm S, Wolff J, Bischoff V, Melemenidis A, Rappsilber J, König J. RiboTaper: defining handler positions in ribosome profiling data. *Nat Methods*. 2016;13(2):165-170. doi:10.1038/nmeth.3688

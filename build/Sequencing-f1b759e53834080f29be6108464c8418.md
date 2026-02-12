@@ -48,9 +48,3 @@ We employed the QIAamp PowerFecal DNA kit (Qiagen), as recommended by PacBio. Th
 ### DNA extraction
 DNA extraction from feces was performed following the protocol of the kit manufacturer.
 
-### References
-
-1. Caporaso JG, Knight R, Kuczynski J. Moving pictures of the human microbiome. *Genome Biol*. 2011;12(5):R50. doi:10.1186/gb-2011-12-5-r50
-2. Turnbaugh PJ, Ley RE, Hamady M, et al. The human microbiome project. *Nature*. 2007;449(7164):804-810. doi:10.1038/nature06244
-
-
