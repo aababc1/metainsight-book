@@ -25,35 +25,42 @@ jobs:
       - name: Build book
         run: myst build --html
 
-      - name: Determine build output path
-        id: buildpath
+      - name: Debug - show build output structure
         run: |
-          if [ -f "_build/html/index.html" ]; then
-            echo "path=_build/html" >> $GITHUB_OUTPUT
-          elif [ -f "_build/site/public/index.html" ]; then
-            echo "path=_build/site/public" >> $GITHUB_OUTPUT
-          elif [ -f "_build/site/index.html" ]; then
-            echo "path=_build/site" >> $GITHUB_OUTPUT
-          else
-            echo "Build output not found!" && find _build -name "index.html" 2>/dev/null
-            echo "path=_build/html" >> $GITHUB_OUTPUT
-          fi
-          echo "Using build path: $(cat $GITHUB_OUTPUT | tail -1)"
+          echo "=== _build directory tree ==="
+          find _build -type f | head -50
+          echo ""
+          echo "=== Check for index.html ==="
+          find _build -name "index.html" -type f
+          echo ""
+          echo "=== _build/html contents (if exists) ==="
+          ls -la _build/html/ 2>/dev/null || echo "_build/html/ does not exist"
+          echo ""
+          echo "=== _build/site contents (if exists) ==="
+          ls -la _build/site/ 2>/dev/null || echo "_build/site/ does not exist"
 
       - name: Copy dashboard into build output
         run: |
           if [ -f "dashboard.html" ]; then
-            cp dashboard.html "${{ steps.buildpath.outputs.path }}/dashboard.html"
-            echo "Copied dashboard.html"
+            if [ -d "_build/html" ]; then
+              cp dashboard.html _build/html/dashboard.html
+            elif [ -d "_build/site" ]; then
+              cp dashboard.html _build/site/dashboard.html
+            fi
           fi
 
-      - name: List build output
-        run: ls -la ${{ steps.buildpath.outputs.path }}/ | head -20
+      - name: Add .nojekyll
+        run: |
+          if [ -d "_build/html" ]; then
+            touch _build/html/.nojekyll
+          elif [ -d "_build/site" ]; then
+            touch _build/site/.nojekyll
+          fi
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ steps.buildpath.outputs.path }}
+          publish_dir: ./_build/html
           publish_branch: gh-pages
           force_orphan: true
