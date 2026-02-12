@@ -62,3 +62,11 @@ $ samtools view -bf 0x04 N008.aln.bam > N008.aln.unmapped.bam
 # convert bam files to fastq
 $ samtools bam2fq N008.aln.unmapped.bam > N008.aln.unmapped.fq
 ```
+
+### References
+
+1. Bolger AM, Lohse M, Usadel B. Trimmomatic: a flexible trimmer for Illumina sequence data. *Bioinformatics*. 2014;30(15):2114-2120. doi:10.1093/bioinformatics/btu170
+2. Langmead B, Salzberg SL. Fast gapped-read alignment with Bowtie 2. *Nat Methods*. 2012;9(4):357-359. doi:10.1038/nmeth.1923
+3. Li H, Handsaker B, Wysoker A, et al. The Sequence Alignment/Map format and SAMtools. *Bioinformatics*. 2009;25(16):2078-2079. doi:10.1093/bioinformatics/btp352
+4. Martin M. Cutadapt removes adapter sequences from high-throughput sequencing reads. *EMBnet.journal*. 2011;17(1):10-12. doi:10.14806/ej.17.1.200
+5. Andrews S. FastQC: a quality control tool for high throughput sequence data. Babraham Bioinformatics. 2010.

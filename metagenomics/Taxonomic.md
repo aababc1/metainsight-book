@@ -56,5 +56,12 @@ The results of Kaiju's analysis can also be downloaded as a `tsv` file using the
 
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaGenomic/img/G_8_4.png?raw=true" style="width:90%">
-  <figcaption><b></b></figcaption>  
+  <figcaption><b></b></figcaption>
 </figure>
+
+### References
+
+1. Wood DE, Lu J, Langmead B. Improved metagenomic analysis with Kraken 2. *Genome Biol*. 2019;20(1):257. doi:10.1186/s13059-019-1891-0
+2. Lu J, Breitwieser FP, Thielen P, et al. Bracken: estimating species abundance in metagenomics data. *PeerJ Comput Sci*. 2017;3:e104. doi:10.7717/peerj-cs.104
+3. Segata N, Waldron L, Ballarini A, et al. Metagenomic microbial community profiling using unique clade-specific marker genes. *Nat Methods*. 2012;9(8):811-814. doi:10.1038/nmeth.2066
+4. Buchfink B, Xie C, Huson DH. Fast and sensitive protein alignment using DIAMOND. *Nat Methods*. 2015;12(1):59-60. doi:10.1038/nmeth.3176

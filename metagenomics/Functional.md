@@ -38,3 +38,12 @@ $ conda deactivate
 
 Besides the standalone version, eggNOG-mapper offers a [web-based analysis service](http://eggNOG-mapper.embl.de/) that can accommodate input of up to 100,000 proteins in FASTA format.
 
+### References
+
+1. Hyatt D, Chen GL, Locascio PF, et al. Prodigal: prokaryotic gene recognition and translation initiation site identification. *BMC Bioinformatics*. 2010;11:119. doi:10.1186/1471-2105-11-119
+2. Huerta-Cepas J, Forslund K, Coelho LP, et al. eggNOG 4.5: a hierarchical orthology framework with improved functional annotations for eukaryotic, prokaryotic and viral sequences. *Nucleic Acids Res*. 2016;44(D1):D286-D293. doi:10.1093/nar/gkv1248
+3. Huerta-Cepas J, Szklarczyk D, Heller D, et al. eggNOG 5.0: a hierarchical, functionally and phylogenetically annotated orthology resource with improved taxonomy and novel functional descriptors for proteins across the tree of life. *Nucleic Acids Res*. 2019;47(D1):D309-D314. doi:10.1093/nar/gky1085
+4. Buchfink B, Xie C, Huson DH. Fast and sensitive protein alignment using DIAMOND. *Nat Methods*. 2015;12(1):59-60. doi:10.1038/nmeth.3176
+5. Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. *Nucleic Acids Res*. 2000;28(1):27-30. doi:10.1093/nar/28.1.27
+6. Tatusov RL, Koonin EV, Liphardt J. A genomic perspective on protein families. *Science*. 1997;278(5338):631-637. doi:10.1126/science.278.5338.631
+

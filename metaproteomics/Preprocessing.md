@@ -28,5 +28,15 @@ $./fastqc
 
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaProteomic/img/P_5_2.png?raw=true" style="width:90%">
-  <figcaption><b>Example of quality check results of raw sequence with FastQC</b></figcaption>  
+  <figcaption><b>Example of quality check results of raw sequence with FastQC</b></figcaption>
 </figure>
+
+### References
+
+Bolger AM, Lohse M, Usadel B. Trimmomatic: a flexible trimmer for Illumina sequence data. *Bioinformatics*. 2014;30(15):2114-2120. doi:10.1093/bioinformatics/btu170
+
+Andrews S. FastQC: A quality control tool for high throughput sequence data. *Babraham Bioinformatics*. 2010.
+
+Martin M. Cutadapt removes adapter sequences from high-throughput sequencing reads. *EMBnet.journal*. 2011;17(1):10-12. doi:10.14806/ej.17.1.200
+
+Ingolia NT, Ghaemmaghami S, Newman JR, Weissman JS. Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling. *Science*. 2009;324(5924):218-223. doi:10.1126/science.1168978

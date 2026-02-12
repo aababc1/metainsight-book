@@ -39,6 +39,21 @@ Additionally, the extracted COG or KEGG ORTHOLOGY information can be visualized 
 
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaTranscriptomic/img/T_7_4.png?raw=true" style="width:70%">
-  <figcaption><b> Example of iPATH3 results </b></figcaption>  
+  <figcaption><b> Example of iPATH3 results </b></figcaption>
 </figure>
 
+### References
+
+1. Huerta-Cepas J, Szklarczyk D, Forslund K, et al. eggNOG 4.5: a hierarchical orthology framework with improved functional annotations for eukaryotic, archaeal and bacterial proteins. *Nucleic Acids Res*. 2016;44(D1):D286-D293.
+
+2. Huerta-Cepas J, Forslund K, Coelho LP, et al. Fast genome-wide functional annotation through orthology assignment by eggNOG-mapper. *Mol Biol Evol*. 2017;34(8):2115-2122. doi:10.1093/molbev/msx148
+
+3. Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. *Nucleic Acids Res*. 2000;28(1):27-30. doi:10.1093/nar/28.1.27
+
+4. Tatusov RL, Koonin EV, Liphardt J. A genomic perspective on protein families. *Science*. 1997;278(5338):631-637. doi:10.1126/science.278.5338.631
+
+5. Mistry J, Chuguransky S, Williams L, et al. Pfam: The protein families database in 2021. *Nucleic Acids Res*. 2021;49(D1):D412-D419. doi:10.1093/nar/gkaa913
+
+6. Lombard V, Golaconda Ramulu H, Drula E, Coutinho PM, Henrissat B. The carbohydrate-active enzymes database (CAZy) in 2013. *Nucleic Acids Res*. 2014;42(D1):D490-D495. doi:10.1093/nar/gkt1178
+
+7. Darzi Y, Falony G, Vieira-Silva S, Raes J. Towards enhanced ecosystem predictive modelling by decoupling turbulence and nutrient transport. *Nucleic Acids Res*. 2018;46(W1):W510-W513. doi:10.1093/nar/gky299

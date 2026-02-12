@@ -51,5 +51,12 @@ In this process, a mapping file for the bins entered in the `--map` option shoul
 
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaGenomic/img/G_11_3.png?raw=true" style="width:90%">
-  <figcaption><b></b></figcaption>  
+  <figcaption><b></b></figcaption>
 </figure>
+
+### References
+
+1. Chaumeil PA, Mussig AJ, Hugenholtz P, et al. GTDB-Tk: a toolkit to classify genomes with the Genome Taxonomy Database. *Bioinformatics*. 2020;36(6):1925-1927. doi:10.1093/bioinformatics/btz848
+2. Asnicar F, Thomas AM, Beghini F, et al. Serotype and clonal analysis of pathogenic Listeria monocytogenes strains. *Nat Commun*. 2020;11(1):2500. doi:10.1038/s41467-020-16366-7
+3. Asnicar F, Weingart G, Tickle TL, et al. Compact graphical representation of phylogenetic data and metadata with GraPhlAn. *PeerJ*. 2015;3:e1029. doi:10.7717/peerj.1029
+4. Hyatt D, Chen GL, Locascio PF, et al. Prodigal: prokaryotic gene recognition and translation initiation site identification. *BMC Bioinformatics*. 2010;11:119. doi:10.1186/1471-2105-11-119

@@ -39,5 +39,15 @@ Additionally, the extracted COG or KEGG ORTHOLOGY information can be visualized 
 
 <figure align = "center">
   <img src="https://github.com/sujin9819/MetaInsight/blob/main/SOP/MetaProteomic/img/P_8_4.png?raw=true" style="width:70%">
-  <figcaption><b> Example of iPATH3 results </b></figcaption>  
+  <figcaption><b> Example of iPATH3 results </b></figcaption>
 </figure>
+
+### References
+
+Huerta-Cepas J, Szklarczyk D, Forslund K, Hedges LM, Lehmann G, Sasson O, Moreno-Escamilla V, Damashash R, Forslund SJ, Petersen TN, von Mering C, Bork P, Huerta-Cepas J. eggNOG 4.5: a hierarchical orthology framework with improved functional annotations for eukaryotic, archaeal and bacterial proteins. *Nucleic Acids Res*. 2016;44(D1):D286-D293. doi:10.1093/nar/gkv1248
+
+Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. *Nucleic Acids Res*. 2000;28(1):27-30. doi:10.1093/nar/28.1.27
+
+Ingolia NT, Ghaemmaghami S, Newman JR, Weissman JS. Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling. *Science*. 2009;324(5924):218-223. doi:10.1126/science.1168978
+
+Ingolia NT. Ribosome profiling: new views of translation, from single codons to genome scale. *Nat Rev Genet*. 2014;15(3):205-213. doi:10.1038/nrg3645

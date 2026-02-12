@@ -22,8 +22,8 @@ De novo genome analysis through shotgun sequencing, supporting both Illumina sho
 ### Metatranscriptomics
 MAG-based reference-guided and reference-independent analysis for gene expression profiling.
 
-### Metaproteomics (Ribo-seq)
-Alternative method for mass-based analysis using ribosome profiling to quantify protein synthesis.
+### Translatome (Ribo-seq)
+Ribosome profiling-based approach to quantify active translation across the microbial community, bridging the gap between transcription and protein output.
 
 ## Getting Started
 

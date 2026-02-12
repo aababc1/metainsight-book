@@ -39,7 +39,7 @@ project:
         - file: metatranscriptomics/Denovo_assembly.md
         - file: metatranscriptomics/Read_based.md
         - file: metatranscriptomics/DE_analysis.md
-    - title: Metaproteomics
+    - title: Translatome
       children:
         - file: metaproteomics/Introduction.md
         - file: metaproteomics/Sequencing.md
