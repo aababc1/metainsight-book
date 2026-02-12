@@ -6,10 +6,16 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,42 +31,24 @@ jobs:
       - name: Build book
         run: myst build --html
 
-      - name: Debug - show build output structure
-        run: |
-          echo "=== _build directory tree ==="
-          find _build -type f | head -50
-          echo ""
-          echo "=== Check for index.html ==="
-          find _build -name "index.html" -type f
-          echo ""
-          echo "=== _build/html contents (if exists) ==="
-          ls -la _build/html/ 2>/dev/null || echo "_build/html/ does not exist"
-          echo ""
-          echo "=== _build/site contents (if exists) ==="
-          ls -la _build/site/ 2>/dev/null || echo "_build/site/ does not exist"
-
       - name: Copy dashboard into build output
         run: |
           if [ -f "dashboard.html" ]; then
-            if [ -d "_build/html" ]; then
-              cp dashboard.html _build/html/dashboard.html
-            elif [ -d "_build/site" ]; then
-              cp dashboard.html _build/site/dashboard.html
-            fi
+            cp dashboard.html _build/html/dashboard.html
           fi
 
-      - name: Add .nojekyll
-        run: |
-          if [ -d "_build/html" ]; then
-            touch _build/html/.nojekyll
-          elif [ -d "_build/site" ]; then
-            touch _build/site/.nojekyll
-          fi
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_build/html
-          publish_branch: gh-pages
-          force_orphan: true
+          path: ./_build/html
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
